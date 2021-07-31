@@ -1,0 +1,18 @@
+* GPLv3+ altına lisanslanmıştır. Kullanın, görün, değiştirin ve herkesle paylaşın.
+* Hangi dosyaların indirileceğini seçin.
+* İndirilirken dosyaları taşıyın.
+* İndirilen dosyaları otomatik olarak başka bir klasöre veya harici sürücüye taşıyın.
+* Sıralı indirmelerle dosyaları aktarın.
+* Android TV.
+* Material tasarım, koyu ve siyah tema ve tablet kullanıcı arayüzü.
+* Özelleştirilebilir ağ, pil ve kullanıcı arayüzü vb. ayarları.
+* 35'in üstünde çeviri.
+* Zamanlama.
+* Atom/RSS yöneticisi ile otomatik indirme.
+* Çok sayıda ve büyük dosyalarla torrentler oluşturun.
+* HTTP\S ve magnet bağlantıları.
+* DHT, PeX, şifreleme, LSD, UPnP, NAT*PMP, µTP.
+* IP filtreleme (eMule dat ve PeerGuardian).
+* Takipçiler ve eşler için vekil sunucu kullanımını destekler.
+* libtorrent4j temel alınmıştır.
+* Ve daha fazlası.

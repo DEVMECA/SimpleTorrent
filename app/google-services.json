@@ -1,0 +1,310 @@
+{
+  "project_info": {
+    "project_number": "791200183630",
+    "firebase_url": "https://devmeca-8c629.firebaseio.com",
+    "project_id": "devmeca-8c629",
+    "storage_bucket": "devmeca-8c629.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791200183630:android:53b55c8b3ee0c33c805a1f",
+        "android_client_info": {
+          "package_name": "com.devmeca.allinsns"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwBDtW917H5seb4KuFUbzdu4JFCRHEXFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8798239074717406~8880205603"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791200183630:android:902979a80c93a761805a1f",
+        "android_client_info": {
+          "package_name": "com.devmeca.flashlite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwBDtW917H5seb4KuFUbzdu4JFCRHEXFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8798239074717406~2360358272"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791200183630:android:94261008c5e27fe3805a1f",
+        "android_client_info": {
+          "package_name": "com.devmeca.healthchecker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwBDtW917H5seb4KuFUbzdu4JFCRHEXFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8798239074717406~8593075198"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791200183630:android:f7487bc3daa7202f805a1f",
+        "android_client_info": {
+          "package_name": "com.devmeca.qrreader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwBDtW917H5seb4KuFUbzdu4JFCRHEXFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8798239074717406~1933293927"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791200183630:android:f0acdff9d00182a0805a1f",
+        "android_client_info": {
+          "package_name": "com.devmeca.simpletorrent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwBDtW917H5seb4KuFUbzdu4JFCRHEXFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8798239074717406~4723611741"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791200183630:android:31ada7dcf548dd99805a1f",
+        "android_client_info": {
+          "package_name": "com.devmeca.simplevpn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwBDtW917H5seb4KuFUbzdu4JFCRHEXFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8798239074717406~6974230942"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791200183630:android:3b8ca9efb50b0813805a1f",
+        "android_client_info": {
+          "package_name": "com.devmeca.tools"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwBDtW917H5seb4KuFUbzdu4JFCRHEXFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791200183630:android:4122a5899c2a9470805a1f",
+        "android_client_info": {
+          "package_name": "com.devmeca.torrenthash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwBDtW917H5seb4KuFUbzdu4JFCRHEXFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8798239074717406~9749733447"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791200183630:android:01a459de4a3f0245805a1f",
+        "android_client_info": {
+          "package_name": "com.devmeca.torrentweb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwBDtW917H5seb4KuFUbzdu4JFCRHEXFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8798239074717406~5530845896"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791200183630:android:7d58c158b9075508805a1f",
+        "android_client_info": {
+          "package_name": "com.devmeca.webtoonmoa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwBDtW917H5seb4KuFUbzdu4JFCRHEXFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8798239074717406~7086871070"
+    }
+  ],
+  "configuration_version": "1"
+}

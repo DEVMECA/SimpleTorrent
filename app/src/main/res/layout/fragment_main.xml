@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main_coordinator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.devmeca.simpletorrent.ui.customviews.EmptyRecyclerView
+            android:id="@+id/torrent_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:focusable="true"
+            android:paddingBottom="@{@dimen/fab_size + @dimen/fab_margin}"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="vertical" />
+
+        <TextView
+            android:id="@+id/empty_view_torrent_list"
+            style="@style/EmptyView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/torrent_list_empty" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <com.leinardi.android.speeddial.SpeedDialOverlayLayout
+                    android:id="@+id/fab_overlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/speedDialOverlayColor" />
+
+                <com.devmeca.simpletorrent.ui.customviews.ThemedSpeedDialView
+                    android:id="@+id/fab_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    app:sdMainFabAnimationRotateAngle="135"
+                    app:sdMainFabClosedSrc="@drawable/ic_add_36dp"
+                    app:sdOverlayLayout="@id/fab_overlay" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="vertical">
+
+                <com.google.android.gms.ads.AdView
+                    android:id="@+id/adView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    ads:adSize="SMART_BANNER"
+                    ads:adUnitId="ca-app-pub-8798239074717406/3497341746" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Need for padding -->
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
