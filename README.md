@@ -1,4 +1,4 @@
-SimpleTorrent
+**SimpleTorrent**
 
 https://play.google.com/store/apps/details?id=com.devmeca.simpletorrent
 
