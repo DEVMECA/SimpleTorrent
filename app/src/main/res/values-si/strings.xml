@@ -10,4 +10,9 @@
     <string name="yes">ඔව්</string>
     <string name="cancel">අවලංගු</string>
     <string name="ok">හරි</string>
+
+    <string name="history_menu">ඉතිහාසය</string>
+    <string name="btn_history_check">සියල්ල පරීක්‍ෂා කරන්න</string>
+    <string name="btn_history_uncheck">සියල්ල සලකුණු නොකරන්න</string>
+    <string name="btn_history_delete">මකන්න</string>
 </resources>

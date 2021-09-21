@@ -559,4 +559,9 @@
 
     <string name="review_content_alert">If you are satisfied with the application \n Thank you for your review!</string>
 
+    <string name="history_menu">வரலாறு</string>
+    <string name="btn_history_check">அனைத்தையும் சரிபார்க்கவும்</string>
+    <string name="btn_history_uncheck">அனைத்தையும் தேர்வுநீக்கவும்</string>
+    <string name="btn_history_delete">நீக்கு</string>
+
 </resources>

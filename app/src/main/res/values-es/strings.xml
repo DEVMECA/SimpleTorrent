@@ -550,4 +550,9 @@
     SimepleTorrent is free software, released under the terms of the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License v3 (GPLv3)</a>]]></string>
     <string name="about_changelog">Registro de cambios</string>
     <string name="pref_header_streaming">Streaming</string>
+
+    <string name="history_menu">Historial</string>
+    <string name="btn_history_check">Marcar todo</string>
+    <string name="btn_history_uncheck">Desmarque todo</string>
+    <string name="btn_history_delete">Eliminar</string>
 </resources>

@@ -406,4 +406,9 @@
     <string name="session_stats_listen_port">Lyssningsport: %1$s</string>
     <string name="session_stats_dht_nodes">DHT-noder: %1$d</string>
     <string name="about">Om</string>
+
+    <string name="history_menu">Historik</string>
+    <string name="btn_history_check">Kontrollera alla</string>
+    <string name="btn_history_uncheck">Avmarkera alla</string>
+    <string name="btn_history_delete">Radera</string>
 </resources>

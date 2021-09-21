@@ -23,8 +23,10 @@ import android.app.Application;
 import android.content.ContentResolver;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.ParcelFileDescriptor;
 import android.text.TextUtils;
+import android.text.format.Formatter;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -36,6 +38,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.devmeca.simpletorrent.common.DateUtil;
 import com.devmeca.simpletorrent.core.RepositoryHelper;
 import com.devmeca.simpletorrent.core.exception.DecodeException;
 import com.devmeca.simpletorrent.core.exception.FreeSpaceException;
@@ -55,6 +58,8 @@ import com.devmeca.simpletorrent.core.system.FileSystemFacade;
 import com.devmeca.simpletorrent.core.system.SystemFacadeHelper;
 import com.devmeca.simpletorrent.core.utils.BencodeFileTreeUtils;
 import com.devmeca.simpletorrent.core.utils.Utils;
+import com.devmeca.simpletorrent.service.HistoryService;
+import com.devmeca.simpletorrent.ui.history.HistoryItemData;
 
 import java.io.File;
 import java.io.FileDescriptor;
@@ -500,6 +505,19 @@ public class AddTorrentViewModel extends AndroidViewModel {
                     priorities[index] = Priority.DEFAULT;
             }
         }
+
+        HistoryItemData itemData = new HistoryItemData();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            itemData.setRULE_DATE(DateUtil.getHypenYYYYMMDDHH24MISS());
+        }else{
+            itemData.setRULE_DATE("");
+        }
+        itemData.setTOR_TITLE(name);
+        itemData.setTOR_DISK_AMT(Formatter.formatFileSize(getApplication().getApplicationContext(), downloadInfo.torrentSize));
+        itemData.setTOR_HASH(downloadInfo.sha1Hash);
+
+        HistoryService.getInstance(getApplication().getBaseContext())
+                      .addTorrentData(itemData);
 
         AddTorrentParams params = new AddTorrentParams(
                 source,

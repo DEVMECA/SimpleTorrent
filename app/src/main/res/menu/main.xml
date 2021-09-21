@@ -27,6 +27,9 @@
     <item android:id="@+id/log_menu"
         android:title="@string/log_journal" />
 
+    <item
+        android:id="@+id/history_menu"
+        android:title="@string/history_menu" />
     <item android:id="@+id/settings_menu"
         android:icon="@drawable/ic_settings_white_24dp"
         android:title="@string/settings" />

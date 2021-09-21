@@ -538,4 +538,9 @@
     <string name="new_tag">Neue Markierung</string>
     <string name="select_tag">Markierung auswählen</string>
     <string name="edit_tag">Markierung bearbeiten</string>
+
+    <string name="history_menu">Verlauf</string>
+    <string name="btn_history_check">Alles überprüfen</string>
+    <string name="btn_history_uncheck">Alles deaktivieren</string>
+    <string name="btn_history_delete">Löschen</string>
 </resources>

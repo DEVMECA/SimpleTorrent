@@ -58,6 +58,7 @@ import com.devmeca.simpletorrent.core.model.data.SessionStats;
 import com.devmeca.simpletorrent.core.system.SystemFacadeHelper;
 import com.devmeca.simpletorrent.core.utils.Utils;
 import com.devmeca.simpletorrent.receiver.NotificationReceiver;
+import com.devmeca.simpletorrent.service.HistoryService;
 import com.devmeca.simpletorrent.ui.BaseAlertDialog;
 import com.devmeca.simpletorrent.ui.FragmentCallback;
 import com.devmeca.simpletorrent.ui.RequestPermissions;
@@ -67,6 +68,7 @@ import com.devmeca.simpletorrent.ui.detailtorrent.BlankFragment;
 import com.devmeca.simpletorrent.ui.detailtorrent.DetailTorrentActivity;
 import com.devmeca.simpletorrent.ui.detailtorrent.DetailTorrentFragment;
 import com.devmeca.simpletorrent.ui.feeds.FeedActivity;
+import com.devmeca.simpletorrent.ui.history.HistoryActivity;
 import com.devmeca.simpletorrent.ui.log.LogActivity;
 import com.devmeca.simpletorrent.ui.main.drawer.AbstractTagItem;
 import com.devmeca.simpletorrent.ui.main.drawer.DrawerExpandableAdapter;
@@ -167,6 +169,9 @@ public class MainActivity extends AppCompatActivity implements FragmentCallback 
         initLayout();
 
         Constants.android_id = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
+
+        //HistoryService.getInstance(getApplication().getBaseContext()).dropTableSQL();
+        HistoryService.getInstance(getApplication().getBaseContext()).initSQL();
 
     }
 
@@ -729,6 +734,8 @@ public class MainActivity extends AppCompatActivity implements FragmentCallback 
             viewModel.resumeAll();
         } else if (itemId == R.id.log_menu) {
             showLog();
+        } else if (itemId == R.id.history_menu) {
+            startActivity(new Intent(this, HistoryActivity.class));
         }
 
         return true;

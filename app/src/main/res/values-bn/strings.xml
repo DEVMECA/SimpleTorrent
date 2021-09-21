@@ -441,4 +441,9 @@
     <string name="new_tag">নতুন ট্যাগ</string>
     <string name="select_tag">ট্যাগ নাও</string>
     <string name="edit_tag">ট্যাগ সম্পাদনা</string>
+
+    <string name="history_menu">ইতিহাস</string>
+    <string name="btn_history_check">সব চেক করুন</string>
+    <string name="btn_history_uncheck">সব আনচেক করুন</string>
+    <string name="btn_history_delete">মুছুন</string>
 </resources>

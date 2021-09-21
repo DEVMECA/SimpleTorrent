@@ -550,4 +550,9 @@
     <string name="new_tag">Yeni etiket</string>
     <string name="select_tag">Etiketi seç</string>
     <string name="edit_tag">Etiketə düzəliş et</string>
+
+    <string name="history_menu">Tarix</string>
+    <string name="btn_history_check">Hamısını yoxlayın</string>
+    <string name="btn_history_uncheck">Hamısının işarəsini çıxarın</string>
+    <string name="btn_history_delete">Sil</string>
 </resources>

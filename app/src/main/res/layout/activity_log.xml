@@ -16,8 +16,7 @@
         android:fitsSystemWindows="true"
         tools:context=".ui.log.LogActivity">
 
-        <include
-            layout="@layout/toolbar" />
+        <include layout="@layout/toolbar" />
 
         <RelativeLayout
             android:id="@+id/coordinator_layout"

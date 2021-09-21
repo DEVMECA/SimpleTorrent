@@ -551,4 +551,9 @@
     <string name="select_tag">Seleziona l\'etichetta</string>
     <string name="edit_tag">Modifica l\'etichetta</string>
     <string name="drawer_sorting_peers">Popolarità</string>
+
+    <string name="history_menu">Cronologia</string>
+    <string name="btn_history_check">Controlla tutto</string>
+    <string name="btn_history_uncheck">Deseleziona tutto</string>
+    <string name="btn_history_delete">Elimina</string>
 </resources>

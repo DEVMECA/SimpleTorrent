@@ -550,4 +550,9 @@
     <string name="about_description"><![CDATA[    SimepleTorrent is a Free as in Freedom torrent client for Android 4+, based on libtorrent (Java wrapper <a href="https://github.com/aldenml/libtorrent4j">libtorrent4j</a>) lib.<br><br>
     SimepleTorrent is free software, released under the terms of the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License v3 (GPLv3)</a>]]></string>
     <string name="about_changelog">更新履歴</string>
+
+    <string name="history_menu">履歴</string>
+    <string name="btn_history_check">すべてチェック</string>
+    <string name="btn_history_uncheck">すべてのチェックを外す</string>
+    <string name="btn_history_delete">削除</string>
 </resources>

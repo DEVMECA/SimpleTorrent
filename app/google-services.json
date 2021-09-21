@@ -38,6 +38,36 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:791200183630:android:aae401b1221152a0805a1f",
+        "android_client_info": {
+          "package_name": "com.devmeca.allintranslate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwBDtW917H5seb4KuFUbzdu4JFCRHEXFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8798239074717406~1504572957"
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:791200183630:android:902979a80c93a761805a1f",
         "android_client_info": {
           "package_name": "com.devmeca.flashlite"
@@ -95,6 +125,65 @@
         }
       },
       "admob_app_id": "ca-app-pub-8798239074717406~8593075198"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791200183630:android:2da565c6dfa53c28805a1f",
+        "android_client_info": {
+          "package_name": "com.devmeca.marketingnmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwBDtW917H5seb4KuFUbzdu4JFCRHEXFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8798239074717406~4367968036"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791200183630:android:6f4e365618f1485e805a1f",
+        "android_client_info": {
+          "package_name": "com.devmeca.multisearcher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwBDtW917H5seb4KuFUbzdu4JFCRHEXFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     },
     {
       "client_info": {
@@ -247,9 +336,9 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:791200183630:android:01a459de4a3f0245805a1f",
+        "mobilesdk_app_id": "1:791200183630:android:a0a2eb9c0a8ab696805a1f",
         "android_client_info": {
-          "package_name": "com.devmeca.torrentweb"
+          "package_name": "com.devmeca.videodownload"
         }
       },
       "oauth_client": [
@@ -273,7 +362,37 @@
           ]
         }
       },
-      "admob_app_id": "ca-app-pub-8798239074717406~5530845896"
+      "admob_app_id": "ca-app-pub-8798239074717406~6459245107"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791200183630:android:873399d58b897052805a1f",
+        "android_client_info": {
+          "package_name": "com.devmeca.vplayer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwBDtW917H5seb4KuFUbzdu4JFCRHEXFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791200183630-flt261f0bfr910pt2rrdec5c9ge6ut6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8798239074717406~7904015647"
     },
     {
       "client_info": {

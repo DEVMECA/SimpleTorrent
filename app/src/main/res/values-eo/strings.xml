@@ -183,4 +183,9 @@
     <string name="error_free_space">Ne sufiĉas libera spaco ĉi tie por elŝuti elektitajn dosierojn</string>
     <string name="free_space">%1$s libere</string>
     <string name="error_no_files_selected">Neniu dosiero elektita</string>
+
+    <string name="history_menu">Historio</string>
+    <string name="btn_history_check">Kontroli ĉion</string>
+    <string name="btn_history_uncheck">Malmarku Ĉion</string>
+    <string name="btn_history_delete">Forigi</string>
 </resources>

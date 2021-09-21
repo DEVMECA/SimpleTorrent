@@ -550,4 +550,9 @@
     <string name="journal_filter_portmap_log">Journal UPnP/NAT-PMP</string>
     <string name="log_journal">Journal</string>
     <string name="switch_off">Désactivé</string>
+
+    <string name="history_menu">Historique</string>
+    <string name="btn_history_check">Tout vérifier</string>
+    <string name="btn_history_uncheck">Désélectionner tout</string>
+    <string name="btn_history_delete">Supprimer</string>
 </resources>

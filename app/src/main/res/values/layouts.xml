@@ -3,4 +3,5 @@
     <item name="activity_main" type="layout">@layout/activity_main_drawer</item>
     <item name="activity_feed" type="layout">@layout/activity_feed_portrait</item>
     <item name="activity_settings" type="layout">@layout/activity_settings_portrait</item>
+    <item name="activity_history_view" type="layout">@layout/activity_history_torrent</item>
 </resources>
