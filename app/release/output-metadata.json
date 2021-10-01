@@ -10,33 +10,9 @@
     {
       "type": "UNIVERSAL",
       "filters": [],
-      "versionCode": 16,
-      "versionName": "1.4.4",
+      "versionCode": 17,
+      "versionName": "1.4.5",
       "outputFile": "app-universal-release.apk"
-    },
-    {
-      "type": "ONE_OF_MANY",
-      "filters": [
-        {
-          "filterType": "ABI",
-          "value": "armeabi-v7a"
-        }
-      ],
-      "versionCode": 1000016,
-      "versionName": "1.4.4",
-      "outputFile": "app-armeabi-v7a-release.apk"
-    },
-    {
-      "type": "ONE_OF_MANY",
-      "filters": [
-        {
-          "filterType": "ABI",
-          "value": "x86"
-        }
-      ],
-      "versionCode": 3000016,
-      "versionName": "1.4.4",
-      "outputFile": "app-x86-release.apk"
     },
     {
       "type": "ONE_OF_MANY",
@@ -46,9 +22,21 @@
           "value": "x86_64"
         }
       ],
-      "versionCode": 4000016,
-      "versionName": "1.4.4",
+      "versionCode": 4000017,
+      "versionName": "1.4.5",
       "outputFile": "app-x86_64-release.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "x86"
+        }
+      ],
+      "versionCode": 3000017,
+      "versionName": "1.4.5",
+      "outputFile": "app-x86-release.apk"
     },
     {
       "type": "ONE_OF_MANY",
@@ -58,9 +46,21 @@
           "value": "arm64-v8a"
         }
       ],
-      "versionCode": 2000016,
-      "versionName": "1.4.4",
+      "versionCode": 2000017,
+      "versionName": "1.4.5",
       "outputFile": "app-arm64-v8a-release.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "armeabi-v7a"
+        }
+      ],
+      "versionCode": 1000017,
+      "versionName": "1.4.5",
+      "outputFile": "app-armeabi-v7a-release.apk"
     }
   ]
 }

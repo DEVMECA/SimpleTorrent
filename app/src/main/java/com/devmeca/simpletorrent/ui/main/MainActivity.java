@@ -26,6 +26,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.provider.Settings;
 import android.text.Html;
 import android.text.format.Formatter;
@@ -159,6 +160,9 @@ public class MainActivity extends AppCompatActivity implements FragmentCallback 
             permDialogIsShow = true;
             startActivity(new Intent(this, RequestPermissions.class));
         }
+
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
 
         setContentView(R.layout.activity_main);
 

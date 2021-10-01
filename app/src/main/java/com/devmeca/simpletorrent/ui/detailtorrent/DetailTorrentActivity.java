@@ -21,6 +21,7 @@ package com.devmeca.simpletorrent.ui.detailtorrent;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -57,6 +58,9 @@ public class DetailTorrentActivity extends AppCompatActivity
             finish();
             return;
         }
+
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
 
         setContentView(R.layout.activity_detail_torrent);
 

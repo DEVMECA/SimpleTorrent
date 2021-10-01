@@ -16,22 +16,22 @@
 #   public *;
 #}
 -dontwarn org.jsoup.**
--dontwarn org.json.simple.**
--dontwarn com.tjeannin.apprate.**
--dontwarn de.hdodenhof.**
--dontwarn com.squareup.retrofit2.**
 -keep class  org.jsoup.** {
 public *;
 }
+-dontwarn org.json.simple.**
 -keep class  org.json.simple.** {
 public *;
 }
+-dontwarn com.tjeannin.apprate.**
 -keep class  com.tjeannin.apprate.** {
 public *;
 }
+-dontwarn de.hdodenhof.**
 -keep class  de.hdodenhof.** {
 public *;
 }
+-dontwarn com.squareup.retrofit2.**
 -keep class  com.squareup.retrofit2.** {
 public *;
 }
@@ -40,19 +40,18 @@ public *;
 public *;
 }
 -dontwarn org.libtorrent4j.**
--keep class  org.libtorrent4j.** {
-public *;
-}
+-keep class  org.libtorrent4j.** {*;}
 -keep public class com.google.firebase.analytics.FirebaseAnalytics {
     public *;
 }
 -keep public class com.google.android.gms.measurement.AppMeasurement {
     public *;
 }
--dontwarn org.libtorrent4j.**
+-dontwarn com.takisoft.**
 -keep class  com.takisoft.** {
     public *;
 }
+-dontwarn com.devmeca.simpletorrent.ui.settings.sections.**
 -keep class com.devmeca.simpletorrent.ui.settings.sections.** {
     public *;
 }
