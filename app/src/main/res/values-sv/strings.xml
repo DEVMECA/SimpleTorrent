@@ -411,4 +411,6 @@
     <string name="btn_history_check">Kontrollera alla</string>
     <string name="btn_history_uncheck">Avmarkera alla</string>
     <string name="btn_history_delete">Radera</string>
+
+    <string name="perm_denied_warning_android_r">För att ladda ner torrenter och komma åt .torrent-filer behöver du fullständiga filåtkomsträttigheter. Utan detta tillstånd är användningen av tjänsten begränsad. Är du säker på att du vill neka denna behörighet?</string>
 </resources>

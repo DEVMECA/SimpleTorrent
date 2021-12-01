@@ -554,4 +554,6 @@
     <string name="btn_history_check">Zaznacz wszystko</string>
     <string name="btn_history_uncheck">Odznacz wszystko</string>
     <string name="btn_history_delete">Usuń</string>
+
+    <string name="perm_denied_warning_android_r"></string>
 </resources>

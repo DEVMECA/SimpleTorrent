@@ -555,4 +555,6 @@
     <string name="btn_history_check">Перевірити все</string>
     <string name="btn_history_uncheck">Зніміть прапорці з усього</string>
     <string name="btn_history_delete">Видалити</string>
+
+    <string name="perm_denied_warning_android_r">Щоб завантажити торренти та отримати доступ до файлів .torrent, вам потрібні повні права доступу до файлів. Без цього дозволу використання сервісу обмежено. Ви впевнені, що хочете відмовити у цьому дозволі?</string>
 </resources>

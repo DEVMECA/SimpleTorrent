@@ -541,4 +541,6 @@
     <string name="btn_history_check">Alles aanvinken</string>
     <string name="btn_history_uncheck">Alles deselecteren</string>
     <string name="btn_history_delete">Verwijderen</string>
+
+    <string name="perm_denied_warning_android_r"></string>
 </resources>

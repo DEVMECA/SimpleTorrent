@@ -555,4 +555,6 @@
     <string name="btn_history_check">அனைத்தையும் சரிபார்க்கவும்</string>
     <string name="btn_history_uncheck">அனைத்தையும் தேர்வுநீக்கவும்</string>
     <string name="btn_history_delete">நீக்கு</string>
+
+    <string name="perm_denied_warning_android_r">டோரண்ட்களைப் பதிவிறக்கி, .டோரண்ட் கோப்புகளை அணுக, உங்களுக்கு முழு கோப்பு அணுகல் உரிமைகள் தேவை. இந்த அனுமதி இல்லாமல், சேவையைப் பயன்படுத்துவது தடைசெய்யப்பட்டுள்ளது. இந்த அனுமதியை நிச்சயமாக மறுக்க விரும்புகிறீர்களா?</string>
 </resources>

@@ -48,6 +48,7 @@ import org.apache.commons.io.FileUtils;
 import org.libtorrent4j.AlertListener;
 import org.libtorrent4j.AnnounceEntry;
 import org.libtorrent4j.ErrorCode;
+import org.libtorrent4j.Pair;
 import org.libtorrent4j.SessionHandle;
 import org.libtorrent4j.SessionManager;
 import org.libtorrent4j.SessionParams;
@@ -207,6 +208,43 @@ public class TorrentSessionImpl extends SessionManager
         } finally {
             settingsLock.unlock();
         }
+    }
+
+    @Override
+    public void setSettings(@NonNull SessionSettings settings, boolean keepPort)
+    {
+        settingsLock.lock();
+
+        try {
+            this.settings = settings;
+            applySettings(settings, keepPort);
+
+        } finally {
+            settingsLock.unlock();
+        }
+    }
+
+    private void applySettings(SessionSettings settings, boolean keepPort)
+    {
+        applyMaxStoredLogs(settings);
+        applySessionLoggerFilters(settings);
+        enableSessionLogger(settings.logging);
+
+        if (!keepPort && settings.useRandomPort) {
+            setRandomPort(settings);
+        }
+
+        SettingsPack sp = settings();
+        if (sp != null) {
+            settingsToSettingsPack(settings, sp);
+            applySettingsPack(sp);
+        }
+    }
+
+    private void setRandomPort(SessionSettings settings) {
+        Pair<Integer, Integer> range = SessionSettings.getRandomRangePort();
+        settings.portRangeFirst = range.first;
+        settings.portRangeSecond = range.second;
     }
 
     @Override

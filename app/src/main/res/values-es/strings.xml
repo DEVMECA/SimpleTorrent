@@ -555,4 +555,6 @@
     <string name="btn_history_check">Marcar todo</string>
     <string name="btn_history_uncheck">Desmarque todo</string>
     <string name="btn_history_delete">Eliminar</string>
+
+    <string name="perm_denied_warning_android_r">Para descargar torrents y acceder a archivos .torrent, necesita todos los derechos de acceso a los archivos. Sin este permiso, el uso del servicio está restringido. ¿Está seguro de que desea denegar este permiso?</string>
 </resources>

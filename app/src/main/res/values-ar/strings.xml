@@ -457,4 +457,6 @@
     <string name="btn_history_check">تحقق من الكل</string>
     <string name="btn_history_uncheck">قم بإلغاء تحديد الكل</string>
     <string name="btn_history_delete">حذف</string>
+
+    <string name="perm_denied_warning_android_r">لتنزيل السيول والوصول إلى ملفات .torrent ، فأنت بحاجة إلى حقوق الوصول الكاملة للملفات. بدون هذا الإذن ، يتم تقييد استخدام الخدمة. هل أنت متأكد أنك تريد رفض هذا الإذن؟</string>
 </resources>

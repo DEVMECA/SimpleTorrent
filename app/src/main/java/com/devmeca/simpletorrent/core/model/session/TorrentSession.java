@@ -49,6 +49,8 @@ public interface TorrentSession
 
     void setSettings(@NonNull SessionSettings settings);
 
+    void setSettings(@NonNull SessionSettings settings, boolean keepPort);
+
     SessionSettings getSettings();
 
     byte[] getLoadedMagnet(String hash);

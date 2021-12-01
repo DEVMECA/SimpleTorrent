@@ -22,6 +22,7 @@ package com.devmeca.simpletorrent.core.settings;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.media.RingtoneManager;
+import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
@@ -46,11 +47,20 @@ public class SettingsRepositoryImpl implements SettingsRepository
         static final boolean playSoundNotify = true;
         static final boolean ledIndicatorNotify = true;
         static final boolean vibrationNotify = true;
-        static int theme(@NonNull Context context) { return Integer.parseInt(context.getString(R.string.pref_theme_light_value)); }
+        static int theme(@NonNull Context context) {
+            return Integer.parseInt(context.getString(R.string.pref_theme_light_value));
+        }
         static int ledIndicatorColorNotify(@NonNull Context context)
         {
             return ContextCompat.getColor(context, R.color.primary);
         }
+        static String foregroundNotifyStatusFilter(@NonNull Context context) {
+            return context.getString(R.string.pref_foreground_notify_status_downloading_value);
+        }
+        static String foregroundNotifySorting(@NonNull Context context) {
+            return context.getString(R.string.pref_foreground_notify_sorting_progress_desc_value);
+        }
+        static final boolean foregroundNotifyCombinedPauseButton = false;
         /* Behavior settings */
         static final boolean autostart = false;
         static final boolean keepAlive = true;
@@ -62,6 +72,7 @@ public class SettingsRepositoryImpl implements SettingsRepository
         static final int customBatteryControlValue = Utils.getDefaultBatteryLowLevel();
         static final boolean unmeteredConnectionsOnly = false;
         static final boolean enableRoaming = true;
+        static final String defaultTrackersList = "";
         /* Network settings */
         static final int portRangeFirst = SessionSettings.DEFAULT_PORT_RANGE_FIRST;
         static final int portRangeSecond = SessionSettings.DEFAULT_PORT_RANGE_SECOND;
@@ -100,6 +111,7 @@ public class SettingsRepositoryImpl implements SettingsRepository
         {
             return "file://" + SystemFacadeHelper.getFileSystemFacade(context).getDefaultDownloadPath();
         }
+        static final boolean watchDirDeleteFile = false;
         static final boolean anonymousMode = SessionSettings.DEFAULT_ANONYMOUS_MODE;
         static final boolean seedingOutgoingConnections = SessionSettings.DEFAULT_SEEDING_OUTGOING_CONNECTIONS;
         /* Limitations settings */
@@ -120,7 +132,6 @@ public class SettingsRepositoryImpl implements SettingsRepository
         static final boolean proxyRequiresAuth = SessionSettings.DEFAULT_PROXY_REQUIRES_AUTH;
         static final String proxyLogin = SessionSettings.DEFAULT_PROXY_LOGIN;
         static final String proxyPassword = SessionSettings.DEFAULT_PROXY_PASSWORD;
-        static final boolean proxyChanged = false;
         static final boolean applyProxy = false;
         /* Scheduling settings */
         static final boolean enableSchedulingStart = false;
@@ -149,6 +160,8 @@ public class SettingsRepositoryImpl implements SettingsRepository
         static final boolean logPeerFilter = SessionSettings.DEFAULT_LOG_PEER_FILTER;
         static final boolean logPortmapFilter = SessionSettings.DEFAULT_LOG_PORTMAP_FILTER;
         static final boolean logTorrentFilter = SessionSettings.DEFAULT_LOG_TORRENT_FILTER;
+
+        static final boolean askManageAllFilesPermission = true;
     }
 
     private Context appContext;
@@ -208,6 +221,13 @@ public class SettingsRepositoryImpl implements SettingsRepository
         settings.autoManaged = autoManage();
         settings.anonymousMode = anonymousMode();
         settings.seedingOutgoingConnections = seedingOutgoingConnections();
+        settings.useRandomPort = useRandomPort();
+        String[] trackers = defaultTrackersList().split("\n");
+        if (trackers.length == 1 && TextUtils.isEmpty(trackers[0])) {
+            settings.defaultTrackersList = new String[]{};
+        } else {
+            settings.defaultTrackersList = trackers;
+        }
 
         settings.proxyType = SessionSettings.ProxyType.fromValue(proxyType());
         settings.proxyAddress = proxyAddress();
@@ -323,7 +343,7 @@ public class SettingsRepositoryImpl implements SettingsRepository
     public int ledIndicatorColorNotify()
     {
         return pref.getInt(appContext.getString(R.string.pref_key_led_indicator_color_notify),
-            Default.ledIndicatorColorNotify(appContext));
+                Default.ledIndicatorColorNotify(appContext));
     }
 
     @Override
@@ -332,6 +352,60 @@ public class SettingsRepositoryImpl implements SettingsRepository
         pref.edit()
                 .putInt(appContext.getString(R.string.pref_key_led_indicator_color_notify), val)
                 .apply();
+    }
+
+    @Override
+    public String foregroundNotifyStatusFilter() {
+        return pref.getString(
+                appContext.getString(R.string.pref_key_foreground_notify_status_filter),
+                Default.foregroundNotifyStatusFilter(appContext)
+        );
+    }
+
+    @Override
+    public void foregroundNotifyStatusFilter(String val) {
+        pref.edit()
+                .putString(
+                        appContext.getString(R.string.pref_key_foreground_notify_status_filter),
+                        val
+                )
+                .apply();
+    }
+
+    @Override
+    public String foregroundNotifySorting() {
+        return pref.getString(
+                appContext.getString(R.string.pref_key_foreground_notify_sorting),
+                Default.foregroundNotifySorting(appContext)
+        );
+    }
+
+    @Override
+    public void foregroundNotifySorting(String val) {
+        pref.edit()
+                .putString(
+                        appContext.getString(R.string.pref_key_foreground_notify_sorting),
+                        val
+                )
+                .apply();
+    }
+
+    @Override
+    public void foregroundNotifyCombinedPauseButton(boolean val) {
+        pref.edit()
+                .putBoolean(
+                        appContext.getString(R.string.pref_key_foreground_notify_combined_pause_button),
+                        val
+                )
+                .apply();
+    }
+
+    @Override
+    public boolean foregroundNotifyCombinedPauseButton() {
+        return pref.getBoolean(
+                appContext.getString(R.string.pref_key_foreground_notify_combined_pause_button),
+                Default.foregroundNotifyCombinedPauseButton
+        );
     }
 
     @Override
@@ -800,6 +874,19 @@ public class SettingsRepositoryImpl implements SettingsRepository
     }
 
     @Override
+    public boolean watchDirDeleteFile() {
+        return pref.getBoolean(appContext.getString(R.string.pref_key_watch_dir_delete_file),
+                Default.watchDirDeleteFile);
+    }
+
+    @Override
+    public void watchDirDeleteFile(boolean val) {
+        pref.edit()
+                .putBoolean(appContext.getString(R.string.pref_key_watch_dir_delete_file), val)
+                .apply();
+    }
+
+    @Override
     public int maxDownloadSpeedLimit()
     {
         return pref.getInt(appContext.getString(R.string.pref_key_max_download_speed),
@@ -950,6 +1037,19 @@ public class SettingsRepositoryImpl implements SettingsRepository
     }
 
     @Override
+    public String defaultTrackersList() {
+        return pref.getString(appContext.getString(R.string.pref_key_default_trackers_list),
+                Default.defaultTrackersList);
+    }
+
+    @Override
+    public void defaultTrackersList(String val) {
+        pref.edit()
+                .putString(appContext.getString(R.string.pref_key_default_trackers_list), val)
+                .apply();
+    }
+
+    @Override
     public boolean autoManage()
     {
         return pref.getBoolean(appContext.getString(R.string.pref_key_auto_manage),
@@ -1070,21 +1170,6 @@ public class SettingsRepositoryImpl implements SettingsRepository
     }
 
     @Override
-    public boolean proxyChanged()
-    {
-        return pref.getBoolean(appContext.getString(R.string.pref_key_proxy_changed),
-                Default.proxyChanged);
-    }
-
-    @Override
-    public void proxyChanged(boolean val)
-    {
-        pref.edit()
-                .putBoolean(appContext.getString(R.string.pref_key_proxy_changed), val)
-                .apply();
-    }
-
-    @Override
     public boolean applyProxy()
     {
         return pref.getBoolean(appContext.getString(R.string.pref_key_apply_proxy),
@@ -1097,6 +1182,16 @@ public class SettingsRepositoryImpl implements SettingsRepository
         pref.edit()
                 .putBoolean(appContext.getString(R.string.pref_key_apply_proxy), val)
                 .apply();
+    }
+
+    @Override
+    public boolean proxyChanged() {
+        return false;
+    }
+
+    @Override
+    public void proxyChanged(boolean val) {
+
     }
 
     @Override
@@ -1441,6 +1536,19 @@ public class SettingsRepositoryImpl implements SettingsRepository
     {
         pref.edit()
                 .putBoolean(appContext.getString(R.string.pref_key_log_torrent_filter), val)
+                .apply();
+    }
+
+    @Override
+    public boolean askManageAllFilesPermission() {
+        return pref.getBoolean(appContext.getString(R.string.pref_key_ask_manage_all_access_permission),
+                Default.askManageAllFilesPermission);
+    }
+
+    @Override
+    public void askManageAllFilesPermission(boolean val) {
+        pref.edit()
+                .putBoolean(appContext.getString(R.string.pref_key_ask_manage_all_access_permission), val)
                 .apply();
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 Yaroslav Pronin <proninyaroslav@mail.ru>
+ * Copyright (C) 2019-2021 Yaroslav Pronin <proninyaroslav@mail.ru>
  *
  * This file is part of LibreTorrent.
  *
@@ -62,6 +62,18 @@ public interface SettingsRepository
     int ledIndicatorColorNotify();
 
     void ledIndicatorColorNotify(int val);
+
+    String foregroundNotifyStatusFilter();
+
+    void foregroundNotifyStatusFilter(String val);
+
+    String foregroundNotifySorting();
+
+    void foregroundNotifySorting(String val);
+
+    void foregroundNotifyCombinedPauseButton(boolean val);
+
+    boolean foregroundNotifyCombinedPauseButton();
 
     /*
      * Behavior settings
@@ -175,6 +187,10 @@ public interface SettingsRepository
 
     void seedingOutgoingConnections(boolean val);
 
+    String defaultTrackersList();
+
+    void defaultTrackersList(String val);
+
     /*
      * Storage settings
      */
@@ -206,6 +222,10 @@ public interface SettingsRepository
     String dirToWatch();
 
     void dirToWatch(String val);
+
+    boolean watchDirDeleteFile();
+
+    void watchDirDeleteFile(boolean val);
 
     /*
      * Limitations settings
@@ -279,13 +299,13 @@ public interface SettingsRepository
 
     void proxyPassword(String val);
 
-    boolean proxyChanged();
-
-    void proxyChanged(boolean val);
-
     boolean applyProxy();
 
     void applyProxy(boolean val);
+
+    boolean proxyChanged();
+
+    void proxyChanged(boolean val);
 
     /*
      * Scheduling settings
@@ -394,4 +414,8 @@ public interface SettingsRepository
     boolean logTorrentFilter();
 
     void logTorrentFilter(boolean val);
+
+    boolean askManageAllFilesPermission();
+
+    void askManageAllFilesPermission(boolean val);
 }

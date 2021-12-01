@@ -547,4 +547,6 @@
     <string name="btn_history_check">Verificar tudo</string>
     <string name="btn_history_uncheck">Desmarque tudo</string>
     <string name="btn_history_delete">Excluir</string>
+
+    <string name="perm_denied_warning_android_r"></string>
 </resources>

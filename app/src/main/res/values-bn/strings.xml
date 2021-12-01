@@ -446,4 +446,6 @@
     <string name="btn_history_check">সব চেক করুন</string>
     <string name="btn_history_uncheck">সব আনচেক করুন</string>
     <string name="btn_history_delete">মুছুন</string>
+
+    <string name="perm_denied_warning_android_r">টরেন্ট ডাউনলোড করতে এবং .torrent ফাইল অ্যাক্সেস করতে, আপনার সম্পূর্ণ ফাইল অ্যাক্সেস অধিকার প্রয়োজন। এই অনুমতি ছাড়া, পরিষেবা ব্যবহার সীমিত করা হয়. আপনি কি নিশ্চিত আপনি এই অনুমতি অস্বীকার করতে চান?</string>
 </resources>

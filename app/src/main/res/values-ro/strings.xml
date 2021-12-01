@@ -554,4 +554,6 @@
     <string name="btn_history_check">Verificați toate</string>
     <string name="btn_history_uncheck">Debifați toate</string>
     <string name="btn_history_delete">Ștergeți</string>
+
+    <string name="perm_denied_warning_android_r"></string>
 </resources>

@@ -556,4 +556,6 @@
     <string name="btn_history_check">Check All</string>
     <string name="btn_history_uncheck">Uncheck All</string>
     <string name="btn_history_delete">Delete</string>
+
+    <string name="perm_denied_warning_android_r">All file access permissions are required to download torrents and access .torrent files. Without this permission, the use of the service is restricted. Are you sure you want to deny this permission\?</string>
 </resources>

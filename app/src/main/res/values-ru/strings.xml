@@ -556,4 +556,6 @@
     <string name="btn_history_check">Отметить все</string>
     <string name="btn_history_uncheck">Снять все отметки</string>
     <string name="btn_history_delete">Удалить</string>
+
+    <string name="perm_denied_warning_android_r"></string>
 </resources>

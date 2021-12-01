@@ -555,4 +555,6 @@
     <string name="btn_history_check">Έλεγχος όλων</string>
     <string name="btn_history_uncheck">Καταργήστε την επιλογή όλων</string>
     <string name="btn_history_delete">Διαγραφή</string>
+
+    <string name="perm_denied_warning_android_r">Για να κατεβάσετε torrents και να αποκτήσετε πρόσβαση σε αρχεία .torrent, χρειάζεστε πλήρη δικαιώματα πρόσβασης στα αρχεία. Χωρίς αυτήν την άδεια, η χρήση της υπηρεσίας είναι περιορισμένη. Είστε βέβαιοι ότι θέλετε να αρνηθείτε αυτήν την άδεια;</string>
 </resources>

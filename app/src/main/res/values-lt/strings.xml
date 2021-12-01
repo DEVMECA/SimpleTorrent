@@ -497,4 +497,6 @@
     <string name="btn_history_check">Tikrinti viską</string>
     <string name="btn_history_uncheck">Atžymėkite viską</string>
     <string name="btn_history_delete">Ištrinti</string>
+
+    <string name="perm_denied_warning_android_r">Norint atsisiųsti torrentus ir pasiekti .torrent failus, jums reikia visų failų prieigos teisių. Be šio leidimo paslaugos naudojimas yra ribojamas. Ar tikrai norite atmesti šį leidimą?</string>
 </resources>

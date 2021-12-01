@@ -547,4 +547,6 @@
     <string name="btn_history_check">检查所有</string>
     <string name="btn_history_uncheck">取消选中所有</string>
     <string name="btn_history_delete">删除</string>
+
+    <string name="perm_denied_warning_android_r">要下載種子文件和訪問 .torrent 文件，您需要完整的文件訪問權限。 未經此許可，該服務的使用將受到限制。 您確定要拒絕此權限嗎？</string>
 </resources>

@@ -272,13 +272,13 @@ public class TorrentEngine
             Log.i(TAG, entry.toString());
         }
     }
-    
+
     private SessionInitParams makeSessionInitParams()
     {
         SessionInitParams initParams = new SessionInitParams();
 
         if (pref.useRandomPort()) {
-            Pair<Integer, Integer> range = SessionSettings.getRandomRangePort();
+            org.libtorrent4j.Pair<Integer, Integer> range = SessionSettings.getRandomRangePort();
             initParams.portRangeFirst = range.first;
             initParams.portRangeSecond = range.second;
         } else {
@@ -298,7 +298,7 @@ public class TorrentEngine
             initParams.proxyLogin = pref.proxyLogin();
             initParams.proxyPassword = pref.proxyPassword();
         }
-        
+
         return initParams;
     }
 
@@ -1202,7 +1202,8 @@ public class TorrentEngine
                 if (f.isDirectory() || !f.getName().endsWith(".torrent"))
                     return;
 
-                addTorrent(Uri.fromFile(f));
+                Uri uri = Uri.fromFile(f);
+                addTorrent(uri);
             }
         };
     }
@@ -1276,10 +1277,19 @@ public class TorrentEngine
         }
     }
 
-    private void setRandomPortRange()
+    private void setRandomPortRange(boolean useRandomPort)
     {
-        Pair<Integer, Integer> range = SessionSettings.getRandomRangePort();
-        setPortRange(range.first, range.second);
+        SessionSettings settings = session.getSettings();
+        settings.useRandomPort = useRandomPort;
+        if (!useRandomPort) {
+            int first = pref.portRangeFirst();
+            int second = pref.portRangeSecond();
+            if (first != -1 && second != -1) {
+                settings.portRangeFirst = first;
+                settings.portRangeSecond = second;
+            }
+        }
+        session.setSettings(settings, false);
     }
 
     private void setPortRange(int first, int second)
@@ -1440,7 +1450,7 @@ public class TorrentEngine
         @Override
         public void onSessionError(@NonNull String errorMsg)
         {
-           notifier.makeSessionErrorNotify(errorMsg);
+           //notifier.makeSessionErrorNotify(errorMsg);
         }
 
         @Override
@@ -1558,7 +1568,7 @@ public class TorrentEngine
             SessionSettings s = session.getSettings();
             s.activeDownloads = pref.maxActiveDownloads();
             session.setSettings(s);
-            
+
         } else if (key.equals(appContext.getString(R.string.pref_key_max_active_uploads))) {
             SessionSettings s = session.getSettings();
             s.activeSeeds = pref.maxActiveUploads();
@@ -1621,7 +1631,7 @@ public class TorrentEngine
 
         } else if (key.equals(appContext.getString(R.string.pref_key_use_random_port))) {
             if (pref.useRandomPort()) {
-                setRandomPortRange();
+                setRandomPortRange(pref.useRandomPort());
 
             } else {
                 int portFirst = pref.portRangeFirst();

@@ -48,6 +48,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceManager;
 
@@ -900,5 +901,13 @@ public class Utils {
             return TorrentFilterCollection.dateAddedYear();
         else
             return TorrentFilterCollection.all();
+    }
+
+
+    public static boolean shouldRequestStoragePermission(@NonNull Activity activity) {
+        return ActivityCompat.shouldShowRequestPermissionRationale(
+                activity,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+        );
     }
 }

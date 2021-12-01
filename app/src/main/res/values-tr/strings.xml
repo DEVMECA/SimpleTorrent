@@ -556,4 +556,6 @@
     <string name="btn_history_check">Tümünü Kontrol Et</string>
     <string name="btn_history_uncheck">Tümünün İşaretini Kaldır</string>
     <string name="btn_history_delete">Sil</string>
+
+    <string name="perm_denied_warning_android_r">Torrentleri indirmek ve .torrent dosyalarına erişmek için tam dosya erişim haklarına sahip olmanız gerekir. Bu izin olmadan hizmetin kullanımı kısıtlanır. Bu izni reddetmek istediğinizden emin misiniz?</string>
 </resources>

@@ -554,4 +554,6 @@
     <string name="btn_history_check">Zkontrolovat vše</string>
     <string name="btn_history_uncheck">Zrušit zaškrtnutí všech</string>
     <string name="btn_history_delete">Smazat</string>
+
+    <string name="perm_denied_warning_android_r">Chcete-li stahovat torrenty a přistupovat k souborům .torrent, potřebujete úplná přístupová práva k souborům. Bez tohoto povolení je používání služby omezeno. Opravdu chcete toto oprávnění odepřít?</string>
 </resources>

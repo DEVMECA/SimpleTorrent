@@ -39,15 +39,16 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.devmeca.simpletorrent.R;
-import com.devmeca.simpletorrent.databinding.ActivityAddTorrentBinding;
 import com.devmeca.simpletorrent.core.exception.DecodeException;
 import com.devmeca.simpletorrent.core.exception.FetchLinkException;
 import com.devmeca.simpletorrent.core.exception.FreeSpaceException;
 import com.devmeca.simpletorrent.core.exception.NoFilesSelectedException;
 import com.devmeca.simpletorrent.core.exception.TorrentAlreadyExistsException;
 import com.devmeca.simpletorrent.core.utils.Utils;
+import com.devmeca.simpletorrent.databinding.ActivityAddTorrentBinding;
 import com.devmeca.simpletorrent.ui.BaseAlertDialog;
-import com.devmeca.simpletorrent.ui.RequestPermissions;
+import com.devmeca.simpletorrent.ui.PermissionDeniedDialog;
+import com.devmeca.simpletorrent.ui.StoragePermissionManager;
 import com.devmeca.simpletorrent.ui.errorreport.ErrorReportDialog;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
@@ -76,6 +77,7 @@ public class AddTorrentActivity extends AppCompatActivity
     private static final String TAG_OUT_OF_MEMORY_DIALOG = "out_of_memory_dialog";
     private static final String TAG_ILLEGAL_ARGUMENT_DIALOG = "illegal_argument_dialog";
     private static final String TAG_ADD_ERROR_DIALOG = "add_error_dialog";
+    private static final String TAG_PERM_DENIED_DIALOG = "perm_denied_dialog";
 
     private ActivityAddTorrentBinding binding;
     private AddTorrentViewModel viewModel;
@@ -83,8 +85,10 @@ public class AddTorrentActivity extends AppCompatActivity
     private boolean permDialogIsShow = false;
     private BaseAlertDialog.SharedViewModel dialogViewModel;
     private ErrorReportDialog errReportDialog;
+    private PermissionDeniedDialog permDeniedDialog;
     private CompositeDisposable disposable = new CompositeDisposable();
     private boolean showAddButton;
+    private StoragePermissionManager permissionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -95,16 +99,28 @@ public class AddTorrentActivity extends AppCompatActivity
         if (savedInstanceState != null)
             permDialogIsShow = savedInstanceState.getBoolean(TAG_PERM_DIALOG_IS_SHOW);
 
-        if (!Utils.checkStoragePermission(getApplicationContext()) && !permDialogIsShow) {
-            permDialogIsShow = true;
-            startActivity(new Intent(this, RequestPermissions.class));
-        }
-
         binding = DataBindingUtil.setContentView(this, R.layout.activity_add_torrent);
         ViewModelProvider provider = new ViewModelProvider(this);
         viewModel = provider.get(AddTorrentViewModel.class);
+        permissionManager = new StoragePermissionManager(this,
+                (isGranted, shouldRequestStoragePermission) -> {
+                    FragmentManager fm = getSupportFragmentManager();
+                    if (!isGranted && shouldRequestStoragePermission) {
+                        if (fm.findFragmentByTag(TAG_PERM_DENIED_DIALOG) == null) {
+                            permDeniedDialog = PermissionDeniedDialog.newInstance();
+                            FragmentTransaction ft = fm.beginTransaction();
+                            ft.add(permDeniedDialog, TAG_PERM_DENIED_DIALOG);
+                            ft.commitAllowingStateLoss();
+                        }
+                    }
+                });
+
         dialogViewModel = provider.get(BaseAlertDialog.SharedViewModel.class);
         errReportDialog = (ErrorReportDialog)getSupportFragmentManager().findFragmentByTag(TAG_ERR_REPORT_DIALOG);
+
+        if (!permissionManager.checkPermissions() && permDeniedDialog == null) {
+            permissionManager.requestPermissions();
+        }
 
         initLayout();
         observeDecodeState();
@@ -134,26 +150,42 @@ public class AddTorrentActivity extends AppCompatActivity
 
     private void handleAlertDialogEvent(BaseAlertDialog.Event event)
     {
-        switch (event.type) {
-            case POSITIVE_BUTTON_CLICKED:
-                if (event.dialogTag != null && event.dialogTag.equals(TAG_ERR_REPORT_DIALOG) && errReportDialog != null) {
-                    Dialog dialog = errReportDialog.getDialog();
-                    if (dialog != null) {
-                        TextInputEditText editText = dialog.findViewById(R.id.comment);
-                        Editable e = editText.getText();
-                        String comment = (e == null ? null : e.toString());
+        if (event.dialogTag == null) {
+            return;
+        }
+        if (event.dialogTag.equals(TAG_ERR_REPORT_DIALOG)) {
+            switch (event.type) {
+                case POSITIVE_BUTTON_CLICKED:
+                    if (errReportDialog != null) {
+                        Dialog dialog = errReportDialog.getDialog();
+                        if (dialog != null) {
+                            TextInputEditText editText = dialog.findViewById(R.id.comment);
+                            Editable e = editText.getText();
+                            String comment = (e == null ? null : e.toString());
 
-                        Utils.reportError(viewModel.errorReport, comment);
+                            Utils.reportError(viewModel.errorReport, comment);
+                            errReportDialog.dismiss();
+                        }
+                    }
+                    finish();
+                    break;
+                case NEGATIVE_BUTTON_CLICKED:
+                    if (errReportDialog != null) {
                         errReportDialog.dismiss();
                     }
-                }
-                finish();
-                break;
-            case NEGATIVE_BUTTON_CLICKED:
-                if (event.dialogTag != null && event.dialogTag.equals(TAG_ERR_REPORT_DIALOG) && errReportDialog != null)
-                    errReportDialog.dismiss();
-                finish();
-                break;
+                    finish();
+                    break;
+            }
+        } else if (event.dialogTag.equals(TAG_PERM_DENIED_DIALOG)) {
+            if (event.type != BaseAlertDialog.EventType.DIALOG_SHOWN) {
+                permDeniedDialog.dismiss();
+            }
+            if (event.type == BaseAlertDialog.EventType.NEGATIVE_BUTTON_CLICKED) {
+                permissionManager.requestPermissions();
+            }
+            if (event.type == BaseAlertDialog.EventType.POSITIVE_BUTTON_CLICKED) {
+                permissionManager.setDoNotAsk(true);
+            }
         }
     }
 

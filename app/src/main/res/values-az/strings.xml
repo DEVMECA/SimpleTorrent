@@ -555,4 +555,6 @@
     <string name="btn_history_check">Hamısını yoxlayın</string>
     <string name="btn_history_uncheck">Hamısının işarəsini çıxarın</string>
     <string name="btn_history_delete">Sil</string>
+
+    <string name="perm_denied_warning_android_r">Torrentləri yükləmək və .torrent fayllarına daxil olmaq üçün sizə tam fayl giriş hüquqları lazımdır. Bu icazə olmadan xidmətdən istifadə məhdudlaşdırılır. Bu icazəni rədd etmək istədiyinizə əminsiniz?</string>
 </resources>

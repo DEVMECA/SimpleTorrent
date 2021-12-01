@@ -1,17 +1,17 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     defaultConfig {
         applicationId "com.devmeca.simpletorrent"
         minSdkVersion 19
-        targetSdkVersion 29
-        versionCode 17
+        targetSdkVersion 30
+        versionCode 20
         /*
          * Convection:
          *  major.minor.[revision][-some_info]
          */
-        versionName '1.4.5'
+        versionName '1.5.0'
         vectorDrawables.useSupportLibrary true
         multiDexEnabled true
 
@@ -101,7 +101,8 @@ tasks.withType(Test) {
     }
 }
 
-def ROOM_VERSION = "2.2.6"
+def ROOM_VERSION = '2.3.0'
+def LIFECYCLE_VERSION = "2.4.0"
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -134,14 +135,15 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:2.2.19"
     implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
 
-    def LIBTORRENT4J_VERSION = "2.0.4-21"
+    def LIBTORRENT4J_VERSION = '2.0.4-22-RC1'
     implementation "org.libtorrent4j:libtorrent4j:$LIBTORRENT4J_VERSION"
     implementation "org.libtorrent4j:libtorrent4j-android-arm:$LIBTORRENT4J_VERSION"
     implementation "org.libtorrent4j:libtorrent4j-android-arm64:$LIBTORRENT4J_VERSION"
     implementation "org.libtorrent4j:libtorrent4j-android-x86:$LIBTORRENT4J_VERSION"
     implementation "org.libtorrent4j:libtorrent4j-android-x86_64:$LIBTORRENT4J_VERSION"
 
-    def ACRA_VERSION = "5.7.0"
+    /* ACRA */
+    def ACRA_VERSION = '5.8.4'
     implementation "ch.acra:acra-dialog:$ACRA_VERSION"
     implementation "ch.acra:acra-mail:$ACRA_VERSION"
 

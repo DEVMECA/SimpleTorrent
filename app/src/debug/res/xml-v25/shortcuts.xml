@@ -12,7 +12,7 @@
         <intent
             android:action="com.devmeca.simpletorrent.ADD_TORRENT_SHORTCUT"
             android:targetClass="com.devmeca.simpletorrent.ui.main.MainActivity"
-            android:targetPackage="com.devmeca.simpletorrent.debug" />
+            android:targetPackage="com.devmeca.simpletorrent" />
     </shortcut>
 
     <shortcut
@@ -24,6 +24,6 @@
         <intent
             android:action="android.intent.action.VIEW"
             android:targetClass="com.devmeca.simpletorrent.ui.addfeed.AddFeedActivity"
-            android:targetPackage="com.devmeca.simpletorrent.debug" />
+            android:targetPackage="com.devmeca.simpletorrent" />
     </shortcut>
 </shortcuts>

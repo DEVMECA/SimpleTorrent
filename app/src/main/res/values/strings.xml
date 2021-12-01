@@ -559,9 +559,78 @@
 
     <string name="review_content_alert">If you are satisfied with the application \n Thank you for your review!</string>
 
-    <string name="history_menu">வரலாறு</string>
-    <string name="btn_history_check">அனைத்தையும் சரிபார்க்கவும்</string>
-    <string name="btn_history_uncheck">அனைத்தையும் தேர்வுநீக்கவும்</string>
-    <string name="btn_history_delete">நீக்கு</string>
+    <string name="history_menu">History</string>
+    <string name="btn_history_check">Select All</string>
+    <string name="btn_history_uncheck">Deselect all</string>
+    <string name="btn_history_delete">Delete selection</string>
+
+    <string name="piece_size_entries_0">Auto</string>
+    <string name="piece_size_entries_1">16 KiB</string>
+    <string name="piece_size_entries_2">32 KiB</string>
+    <string name="piece_size_entries_3">64 KiB</string>
+    <string name="piece_size_entries_4">128 KiB</string>
+    <string name="piece_size_entries_5">256 KiB</string>
+    <string name="piece_size_entries_6">512 KiB</string>
+    <string name="piece_size_entries_7">1 MiB</string>
+    <string name="piece_size_entries_8">2 MiB</string>
+    <string name="piece_size_entries_9">4 MiB</string>
+    <string name="piece_size_entries_10">8 MiB</string>
+    <string name="piece_size_entries_11">16 MiB</string>
+    <string name="piece_size_entries_12">32 MiB</string>
+
+    <string name="pref_theme_entries_0">Light</string>
+    <string name="pref_theme_entries_1">Dark</string>
+    <string name="pref_theme_entries_2">Black</string>
+
+    <string name="pref_foreground_notify_status_filter_entries_0">All</string>
+    <string name="pref_foreground_notify_status_filter_entries_1">Downloading…</string>
+    <string name="pref_foreground_notify_status_filter_entries_2">Downloaded</string>
+    <string name="pref_foreground_notify_status_filter_entries_3">Downloading metadata…</string>
+    <string name="pref_foreground_notify_status_filter_entries_4">Error</string>
+    <string name="pref_foreground_notify_sorting">Sorting</string>
+
+    <string name="pref_foreground_notify_sorting_entries_0">Name (A - Z)</string>
+    <string name="pref_foreground_notify_sorting_entries_1">Name (Z - A)</string>
+    <string name="pref_foreground_notify_sorting_entries_2">Date added (newest first)</string>
+    <string name="pref_foreground_notify_sorting_entries_3">Date added (oldest first)</string>
+    <string name="pref_foreground_notify_sorting_entries_4">Size (smallest first)</string>
+    <string name="pref_foreground_notify_sorting_entries_5">Size (greatest first)</string>
+    <string name="pref_foreground_notify_sorting_entries_6">Progress (smallest first)</string>
+    <string name="pref_foreground_notify_sorting_entries_7">Progress (greatest first)</string>
+    <string name="pref_foreground_notify_sorting_entries_8">ETA (smallest first)</string>
+    <string name="pref_foreground_notify_sorting_entries_9">ETA (greatest first)</string>
+    <string name="pref_foreground_notify_sorting_entries_10">Popularity (smallest first)</string>
+    <string name="pref_foreground_notify_sorting_entries_11">Popularity (greatest first)</string>
+    <string name="pref_foreground_notify_sorting_entries_12">No sorting</string>
+
+    <!-- pref_enc_mode_entries -->
+    <string name="pref_enc_mode_entries_0">Prefer</string>
+    <string name="pref_enc_mode_entries_1">Require</string>
+    <string name="pref_enc_mode_entries_2">Off</string>
+
+    <string name="pref_proxy_type_entries_0">(None)</string>
+    <string name="pref_proxy_type_entries_1">SOCKS4</string>
+    <string name="pref_proxy_type_entries_2">SOCKS5</string>
+    <string name="pref_proxy_type_entries_3">HTTP</string>
+
+    <string name="pref_feed_refresh_intervals_entries_0">15 minutes</string>
+    <string name="pref_feed_refresh_intervals_entries_1">30 minutes</string>
+    <string name="pref_feed_refresh_intervals_entries_2">1 hour</string>
+    <string name="pref_feed_refresh_intervals_entries_3">2 hours</string>
+    <string name="pref_feed_refresh_intervals_entries_4">6 hours</string>
+    <string name="pref_feed_refresh_intervals_entries_5">12 hours</string>
+    <string name="pref_feed_refresh_intervals_entries_6">1 day</string>
+
+    <string name="pref_feed_keep_items_time_entries_0">1 day</string>
+    <string name="pref_feed_keep_items_time_entries_1">2 days</string>
+    <string name="pref_feed_keep_items_time_entries_2">4 days</string>
+    <string name="pref_feed_keep_items_time_entries_3">1 week</string>
+    <string name="pref_feed_keep_items_time_entries_4">2 weeks</string>
+    <string name="pref_feed_keep_items_time_entries_5">1 month</string>
+    <string name="pref_feed_keep_items_time_entries_6">2 months</string>
+    <string name="pref_feed_keep_items_time_entries_7">3 months</string>
+    <string name="pref_feed_keep_items_time_entries_8">Indefinitely</string>
+
+    <string name="perm_denied_warning_android_r">All file access permissions are required to download torrents and access .torrent files. Without this permission, the use of the service is restricted. Are you sure you want to deny this permission\?</string>
 
 </resources>

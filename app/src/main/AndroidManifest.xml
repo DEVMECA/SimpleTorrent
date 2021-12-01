@@ -4,9 +4,7 @@
     package="com.devmeca.simpletorrent"
     android:installLocation="auto">
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" tools:node="replace" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.QUICKBOOT_POWERON" />
@@ -15,11 +13,18 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
     <uses-feature
         android:name="android.hardware.touchscreen"
         android:required="false" />
     <uses-feature android:name="android.software.leanback"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.wifi"
         android:required="false" />
 
     <application
@@ -33,10 +38,11 @@
         android:fullBackupContent="true"
         android:usesCleartextTraffic="true"
         android:requestLegacyExternalStorage="true"
-        android:grantUriPermissions="true">
+        android:hardwareAccelerated="true">
 
         <activity android:name=".ui.main.MainActivity"
-            android:theme="@style/AppTheme.Launcher">
+            android:theme="@style/AppTheme.Launcher"
+            android:exported="true">
             <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
@@ -52,12 +58,6 @@
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
-
-        <service android:name="com.devmeca.simpletorrent.service.CustomFirebaseMessagingService">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
 
         <activity
             android:label="@string/app_name"
@@ -144,7 +144,8 @@
         <activity android:name=".ui.SendTextToClipboard"
             android:label="@string/send_text_to_clipboard"
             android:icon="@drawable/ic_content_copy_grey600_48dp"
-            android:theme="@android:style/Theme.NoDisplay">
+            android:theme="@android:style/Theme.NoDisplay"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -154,12 +155,9 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".ui.RequestPermissions"
-            android:theme="@style/AppTheme.Translucent" />
-
         <activity android:name=".ui.settings.SettingsActivity"
-            android:label="@string/settings">
+            android:label="@string/settings"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -268,7 +266,7 @@
         <activity
             android:label="@string/app_name"
             android:name=".ui.history.HistoryActivity"
-            />
+            android:theme="@style/AppTheme.Translucent" />
 
         <service
             android:name=".service.TorrentService" />
@@ -283,11 +281,13 @@
         </receiver>
 
         <receiver
-            android:name=".receiver.BootReceiver">
+            android:name=".receiver.BootReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.QUICKBOOT_POWERON" />
                 <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="android.app.action.SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED" />
             </intent-filter>
         </receiver>
 
@@ -303,10 +303,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths"/>
         </provider>
-
-        <meta-data
-            android:name="android.support.FILE_PROVIDER_PATHS"
-            android:resource="@xml/provider_paths"/>
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"

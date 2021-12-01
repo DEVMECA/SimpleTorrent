@@ -27,19 +27,23 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.devmeca.simpletorrent.core.utils.Utils;
 import com.devmeca.simpletorrent.ui.FragmentCallback;
-import com.devmeca.simpletorrent.ui.RequestPermissions;
+import com.devmeca.simpletorrent.ui.PermissionDeniedDialog;
+import com.devmeca.simpletorrent.ui.StoragePermissionManager;
 
 public class CreateTorrentActivity extends AppCompatActivity
     implements FragmentCallback
 {
     private static final String TAG_CREATE_TORRENT_DIALOG = "create_torrent_dialog";
-    private static final String TAG_PERM_DIALOG_IS_SHOW = "perm_dialog_is_show";
+    private static final String TAG_PERM_DENIED_DIALOG = "perm_denied_dialog";
 
     private CreateTorrentDialog createTorrentDialog;
+    private PermissionDeniedDialog permDeniedDialog;
     private boolean permDialogIsShow = false;
+    private StoragePermissionManager permissionManager;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
@@ -48,6 +52,18 @@ public class CreateTorrentActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
         FragmentManager fm = getSupportFragmentManager();
+        permissionManager = new StoragePermissionManager(this,
+                (isGranted, shouldRequestStoragePermission) -> {
+                    if (!isGranted && shouldRequestStoragePermission) {
+                        if (fm.findFragmentByTag(TAG_PERM_DENIED_DIALOG) == null) {
+                            permDeniedDialog = PermissionDeniedDialog.newInstance();
+                            FragmentTransaction ft = fm.beginTransaction();
+                            ft.add(permDeniedDialog, TAG_PERM_DENIED_DIALOG);
+                            ft.commitAllowingStateLoss();
+                        }
+                    }
+                });
+
         createTorrentDialog = (CreateTorrentDialog)fm.findFragmentByTag(TAG_CREATE_TORRENT_DIALOG);
         if (createTorrentDialog == null) {
             createTorrentDialog = CreateTorrentDialog.newInstance();
@@ -55,18 +71,17 @@ public class CreateTorrentActivity extends AppCompatActivity
         }
 
         if (savedInstanceState != null)
-            permDialogIsShow = savedInstanceState.getBoolean(TAG_PERM_DIALOG_IS_SHOW);
+            permDialogIsShow = savedInstanceState.getBoolean(TAG_CREATE_TORRENT_DIALOG);
 
-        if (!Utils.checkStoragePermission(getApplicationContext()) && !permDialogIsShow) {
-            permDialogIsShow = true;
-            startActivity(new Intent(this, RequestPermissions.class));
+        if (!permissionManager.checkPermissions() && permDeniedDialog == null) {
+            permissionManager.requestPermissions();
         }
     }
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState)
     {
-        outState.putBoolean(TAG_PERM_DIALOG_IS_SHOW, permDialogIsShow);
+        outState.putBoolean(TAG_CREATE_TORRENT_DIALOG, permDialogIsShow);
 
         super.onSaveInstanceState(outState);
     }

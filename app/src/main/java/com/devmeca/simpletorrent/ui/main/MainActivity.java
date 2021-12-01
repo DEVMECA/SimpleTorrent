@@ -62,7 +62,8 @@ import com.devmeca.simpletorrent.receiver.NotificationReceiver;
 import com.devmeca.simpletorrent.service.HistoryService;
 import com.devmeca.simpletorrent.ui.BaseAlertDialog;
 import com.devmeca.simpletorrent.ui.FragmentCallback;
-import com.devmeca.simpletorrent.ui.RequestPermissions;
+import com.devmeca.simpletorrent.ui.PermissionDeniedDialog;
+import com.devmeca.simpletorrent.ui.StoragePermissionManager;
 import com.devmeca.simpletorrent.ui.addtag.AddTagActivity;
 import com.devmeca.simpletorrent.ui.customviews.ExpansionHeader;
 import com.devmeca.simpletorrent.ui.detailtorrent.BlankFragment;
@@ -99,13 +100,12 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity implements FragmentCallback {
-
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    private static final String TAG_PERM_DIALOG_IS_SHOW = "perm_dialog_is_show";
     private static final String TAG_ABOUT_DIALOG = "about_dialog";
+    private static final String TAG_PERM_DENIED_DIALOG = "perm_denied_dialog";
 
-    public static final String ACTION_ADD_TORRENT_SHORTCUT = "com.devmeca.simpletorrent.ADD_TORRENT_SHORTCUT";
+    public static final String ACTION_ADD_TORRENT_SHORTCUT = "org.proninyaroslav.libretorrent.ADD_TORRENT_SHORTCUT";
 
     /* Android data binding doesn't work with layout aliases */
     private MainFragment mainFragment;
@@ -132,8 +132,9 @@ public class MainActivity extends AppCompatActivity implements FragmentCallback 
     private CompositeDisposable disposables = new CompositeDisposable();
     private BaseAlertDialog.SharedViewModel dialogViewModel;
     private BaseAlertDialog aboutDialog;
-    private boolean permDialogIsShow = false;
     private TorrentInfoProvider infoProvider;
+    private PermissionDeniedDialog permDeniedDialog;
+    private StoragePermissionManager permissionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,14 +152,24 @@ public class MainActivity extends AppCompatActivity implements FragmentCallback 
         viewModel = provider.get(MainViewModel.class);
         msgViewModel = provider.get(MsgMainViewModel.class);
         dialogViewModel = provider.get(BaseAlertDialog.SharedViewModel.class);
-        aboutDialog = (BaseAlertDialog) getSupportFragmentManager().findFragmentByTag(TAG_ABOUT_DIALOG);
 
-        if (savedInstanceState != null)
-            permDialogIsShow = savedInstanceState.getBoolean(TAG_PERM_DIALOG_IS_SHOW);
+        FragmentManager fm = getSupportFragmentManager();
+        permissionManager = new StoragePermissionManager(this,
+                (isGranted, shouldRequestStoragePermission) -> {
+                    if (!isGranted && shouldRequestStoragePermission) {
+                        if (fm.findFragmentByTag(TAG_PERM_DENIED_DIALOG) == null) {
+                            permDeniedDialog = PermissionDeniedDialog.newInstance();
+                            FragmentTransaction ft = fm.beginTransaction();
+                            ft.add(permDeniedDialog, TAG_PERM_DENIED_DIALOG);
+                            ft.commitAllowingStateLoss();
+                        }
+                    }
+                });
+        aboutDialog = (BaseAlertDialog) fm.findFragmentByTag(TAG_ABOUT_DIALOG);
+        permDeniedDialog = (PermissionDeniedDialog) fm.findFragmentByTag(TAG_PERM_DENIED_DIALOG);
 
-        if (!Utils.checkStoragePermission(getApplicationContext()) && !permDialogIsShow) {
-            permDialogIsShow = true;
-            startActivity(new Intent(this, RequestPermissions.class));
+        if (!permissionManager.checkPermissions() && permDeniedDialog == null) {
+            permissionManager.requestPermissions();
         }
 
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
@@ -176,9 +187,7 @@ public class MainActivity extends AppCompatActivity implements FragmentCallback 
 
         //HistoryService.getInstance(getApplication().getBaseContext()).dropTableSQL();
         HistoryService.getInstance(getApplication().getBaseContext()).initSQL();
-
     }
-
 
     private void initLayout() {
         showBlankFragment();
@@ -362,13 +371,6 @@ public class MainActivity extends AppCompatActivity implements FragmentCallback 
     }
 
     @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        outState.putBoolean(TAG_PERM_DIALOG_IS_SHOW, permDialogIsShow);
-
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
@@ -405,15 +407,29 @@ public class MainActivity extends AppCompatActivity implements FragmentCallback 
     private void subscribeAlertDialog() {
         Disposable d = dialogViewModel.observeEvents()
                 .subscribe((event) -> {
-                    if (event.dialogTag == null || !event.dialogTag.equals(TAG_ABOUT_DIALOG))
+                    if (event.dialogTag == null) {
                         return;
-                    switch (event.type) {
-                        case NEGATIVE_BUTTON_CLICKED:
-                            openChangelogLink();
-                            break;
-                        case DIALOG_SHOWN:
-                            initAboutDialog();
-                            break;
+                    }
+
+                    if (event.dialogTag.equals(TAG_ABOUT_DIALOG)) {
+                        switch (event.type) {
+                            case NEGATIVE_BUTTON_CLICKED:
+                                openChangelogLink();
+                                break;
+                            case DIALOG_SHOWN:
+                                initAboutDialog();
+                                break;
+                        }
+                    } else if (event.dialogTag.equals(TAG_PERM_DENIED_DIALOG)) {
+                        if (event.type != BaseAlertDialog.EventType.DIALOG_SHOWN) {
+                            permDeniedDialog.dismiss();
+                        }
+                        if (event.type == BaseAlertDialog.EventType.NEGATIVE_BUTTON_CLICKED) {
+                            permissionManager.requestPermissions();
+                        }
+                        if (event.type == BaseAlertDialog.EventType.POSITIVE_BUTTON_CLICKED) {
+                            permissionManager.setDoNotAsk(true);
+                        }
                     }
                 });
         disposables.add(d);
@@ -772,6 +788,7 @@ public class MainActivity extends AppCompatActivity implements FragmentCallback 
                     .getAppVersionName();
             if (versionName != null)
                 versionTextView.setText(versionName);
+
             descriptionTextView.setText(Html.fromHtml(getString(R.string.about_description)));
             descriptionTextView.setMovementMethod(LinkMovementMethod.getInstance());
         }
