@@ -65,8 +65,6 @@ import com.devmeca.simpletorrent.ui.addlink.AddLinkActivity;
 import com.devmeca.simpletorrent.ui.addtorrent.AddTorrentActivity;
 import com.devmeca.simpletorrent.ui.createtorrent.CreateTorrentActivity;
 import com.devmeca.simpletorrent.ui.customviews.RecyclerViewDividerDecoration;
-import com.devmeca.simpletorrent.ui.filemanager.FileManagerConfig;
-import com.devmeca.simpletorrent.ui.filemanager.FileManagerDialog;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -77,7 +75,6 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import com.leinardi.android.speeddial.SpeedDialActionItem;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import io.reactivex.Flowable;
@@ -614,6 +611,7 @@ public class MainFragment extends Fragment
 
     private void openTorrentFileDialog()
     {
+        /*
         Intent i = new Intent(activity, FileManagerDialog.class);
 
         FileManagerConfig config = new FileManagerConfig(null,
@@ -623,6 +621,10 @@ public class MainFragment extends Fragment
 
         i.putExtra(FileManagerDialog.TAG_CONFIG, config);
         startActivityForResult(i, TORRENT_FILE_CHOOSE_REQUEST);
+         */
+        Intent intent = new Intent().setType("*/*").setAction(Intent.ACTION_OPEN_DOCUMENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        startActivityForResult(Intent.createChooser(intent, "Select a file"), TORRENT_FILE_CHOOSE_REQUEST);
     }
 
     private void openFileErrorDialog()

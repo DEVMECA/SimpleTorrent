@@ -160,8 +160,6 @@ public class SettingsRepositoryImpl implements SettingsRepository
         static final boolean logPeerFilter = SessionSettings.DEFAULT_LOG_PEER_FILTER;
         static final boolean logPortmapFilter = SessionSettings.DEFAULT_LOG_PORTMAP_FILTER;
         static final boolean logTorrentFilter = SessionSettings.DEFAULT_LOG_TORRENT_FILTER;
-
-        static final boolean askManageAllFilesPermission = true;
     }
 
     private Context appContext;
@@ -1540,15 +1538,9 @@ public class SettingsRepositoryImpl implements SettingsRepository
     }
 
     @Override
-    public boolean askManageAllFilesPermission() {
-        return pref.getBoolean(appContext.getString(R.string.pref_key_ask_manage_all_access_permission),
-                Default.askManageAllFilesPermission);
-    }
-
-    @Override
-    public void askManageAllFilesPermission(boolean val) {
+    public void askFilesPermission(boolean val) {
         pref.edit()
-                .putBoolean(appContext.getString(R.string.pref_key_ask_manage_all_access_permission), val)
+                .putBoolean(appContext.getString(R.string.pref_key_ask_file_access_permission), val)
                 .apply();
     }
 }

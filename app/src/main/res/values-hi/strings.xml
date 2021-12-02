@@ -507,5 +507,5 @@
     <string name="btn_history_uncheck">सभी को अनचेक करें</string>
     <string name="btn_history_delete">हटाएं</string>
 
-    <string name="perm_denied_warning_android_r">टॉरेंट डाउनलोड करने और .torrent फ़ाइलों तक पहुंचने के लिए, आपको पूर्ण फ़ाइल एक्सेस अधिकारों की आवश्यकता है। इस अनुमति के बिना, सेवा का उपयोग प्रतिबंधित है। क्या आप वाकई इस अनुमति को अस्वीकार करना चाहते हैं?</string>
+    <string name="perm_denied_warning_android_r"></string>
 </resources>

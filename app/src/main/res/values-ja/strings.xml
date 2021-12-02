@@ -556,5 +556,5 @@
     <string name="btn_history_uncheck">すべてのチェックを外す</string>
     <string name="btn_history_delete">削除</string>
 
-    <string name="perm_denied_warning_android_r">Torrentをダウンロードして.torrentファイルにアクセスするには、すべてのファイルアクセス権が必要です。 この権限がない場合は、サービスの利用に制限があります。 この権限を拒否しますか？</string>
+    <string name="perm_denied_warning_android_r">トレントをダウンロードして.torrentファイルにアクセスするには、ファイルアクセス許可が必要です。 この許可がない場合、サービスの使用は制限されます。 この許可を拒否してもよろしいですか？</string>
 </resources>

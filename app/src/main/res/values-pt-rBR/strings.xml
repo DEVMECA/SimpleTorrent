@@ -548,5 +548,5 @@
     <string name="btn_history_uncheck">Desmarque tudo</string>
     <string name="btn_history_delete">Excluir</string>
 
-    <string name="perm_denied_warning_android_r"></string>
+    <string name="perm_denied_warning_android_r">permissões de acesso de arquivo são necessárias para baixar torrents e acessar arquivos .torrent. Sem essa permissão, o uso do serviço é restrito. Tem certeza que deseja negar esta permissão?</string>
 </resources>

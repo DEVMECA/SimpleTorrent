@@ -546,10 +546,10 @@
     SimepleTorrent is free software, released under the terms of the <a href="http://www.gnu.org/copyleft/gpl.html">GNU General Public License v3 (GPLv3)</a>]]></string>
     <string name="about_changelog">Евиденција измена</string>
 
-    <string name="хистори_мену">Историја</string>
-    <string name="бтн_хистори_цхецк">Провери све</string>
-    <string name="бтн_хистори_унцхецк">Поништите ознаку за све</string>
-    <string name="бтн_хистори_делете">Избриши</string>
+    <string name="history_menu">Историја</string>
+    <string name="btn_history_check">Провери све</string>
+    <string name="btn_history_uncheck">Поништите ознаку за све</string>
+    <string name="btn_history_delete">Избриши</string>
 
-    <string name="perm_denied_warning_android_r">Да бисте преузели торенте и приступили .торрент датотекама, потребна су вам пуна права приступа датотекама. Без ове дозволе, коришћење услуге је ограничено. Да ли сте сигурни да желите да одбијете ову дозволу?</string>
+    <string name="perm_denied_warning_android_r">Дозволе за приступ датотекама су потребне за преузимање торента и приступ .торрент датотекама. Без ове дозволе, коришћење услуге је ограничено. Да ли сте сигурни да желите да одбијете ову дозволу?</string>
 </resources>

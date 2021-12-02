@@ -522,5 +522,5 @@
     <string name="btn_history_uncheck">Desmarkatu guztiak</string>
     <string name="btn_history_delete">Ezabatu</string>
 
-    <string name="perm_denied_warning_android_r">Torrent-ak deskargatzeko eta .torrent fitxategiak atzitzeko, fitxategiak atzitzeko eskubide osoa behar dituzu. Baimen hori gabe, zerbitzuaren erabilera mugatuta dago. Ziur baimen hau ukatu nahi duzula?</string>
+    <string name="perm_denied_warning_android_r">fitxategiak sartzeko baimenak behar dira torrent-ak deskargatzeko eta .torrent fitxategiak atzitzeko. Baimen hori gabe, zerbitzuaren erabilera mugatuta dago. Ziur baimen hau ukatu nahi duzula?</string>
 </resources>

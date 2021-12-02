@@ -21,10 +21,7 @@ package com.devmeca.simpletorrent.ui;
 
 import android.Manifest;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Build;
-import android.provider.Settings;
 
 import androidx.activity.ComponentActivity;
 import androidx.activity.result.ActivityResultLauncher;
@@ -36,7 +33,6 @@ import com.devmeca.simpletorrent.core.settings.SettingsRepository;
 import com.devmeca.simpletorrent.core.utils.Utils;
 
 public class StoragePermissionManager {
-    private ActivityResultLauncher<Intent> manageExternalStoragePermission;
     private ActivityResultLauncher<String> storagePermission;
     private final Context appContext;
     private SettingsRepository pref;
@@ -47,42 +43,22 @@ public class StoragePermissionManager {
     ) {
         appContext = activity.getApplicationContext();
         pref = RepositoryHelper.getSettingsRepository(appContext);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            manageExternalStoragePermission = activity.registerForActivityResult(
-                    new ActivityResultContracts.StartActivityForResult(),
-                    result -> callback.onResult(
-                            Utils.checkStoragePermission(appContext),
-                            pref.askManageAllFilesPermission()
-                    )
-            );
-        } else {
-            storagePermission = activity.registerForActivityResult(
-                    new ActivityResultContracts.RequestPermission(),
-                    isGranted -> callback.onResult(
-                            isGranted,
-                            Utils.shouldRequestStoragePermission(activity)
-                    )
-            );
-        }
+        storagePermission = activity.registerForActivityResult(
+                new ActivityResultContracts.RequestPermission(),
+                isGranted -> callback.onResult(
+                        isGranted,
+                        Utils.shouldRequestStoragePermission(activity)
+                )
+        );
     }
 
     public void requestPermissions() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            if (!pref.askManageAllFilesPermission()) {
-                return;
-            }
-            Uri uri = Uri.fromParts("package", appContext.getPackageName(), null);
-            Intent i = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION)
-                    .setData(uri);
-            manageExternalStoragePermission.launch(i);
-        } else {
-            storagePermission.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        }
+        storagePermission.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE);
     }
 
     public void setDoNotAsk(boolean doNotAsk) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            pref.askManageAllFilesPermission(!doNotAsk);
+            pref.askFilesPermission(!doNotAsk);
         }
     }
 

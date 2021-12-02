@@ -498,5 +498,5 @@
     <string name="btn_history_uncheck">Atžymėkite viską</string>
     <string name="btn_history_delete">Ištrinti</string>
 
-    <string name="perm_denied_warning_android_r">Norint atsisiųsti torrentus ir pasiekti .torrent failus, jums reikia visų failų prieigos teisių. Be šio leidimo paslaugos naudojimas yra ribojamas. Ar tikrai norite atmesti šį leidimą?</string>
+    <string name="perm_denied_warning_android_r">sono necessarie le autorizzazioni di accesso ai file per scaricare torrent e accedere ai file .torrent. Senza questa autorizzazione, l\'uso del servizio è limitato. Sei sicuro di voler negare questa autorizzazione?</string>
 </resources>

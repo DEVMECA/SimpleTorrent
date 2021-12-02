@@ -189,5 +189,5 @@
     <string name="btn_history_uncheck">Malmarku Ĉion</string>
     <string name="btn_history_delete">Forigi</string>
 
-    <string name="perm_denied_warning_android_r">Por elŝuti torentojn kaj aliri .torrent-dosierojn, vi bezonas plenajn dosierojn alirrajtojn. Sen ĉi tiu permeso, la uzo de la servo estas limigita. Ĉu vi certas, ke vi volas nei ĉi tiun permeson?</string>
+    <string name="perm_denied_warning_android_r">dosiero-alirpermesoj estas postulataj por elŝuti torentojn kaj aliri .torrent-dosierojn. Sen ĉi tiu permeso, la uzo de la servo estas limigita. Ĉu vi certas, ke vi volas nei ĉi tiun permeson?</string>
 </resources>

@@ -400,5 +400,5 @@
     <string name="btn_history_uncheck">Desmarqueu-ho tot</string>
     <string name="btn_history_delete">Suprimeix</string>
 
-    <string name="perm_denied_warning_android_r">Per descarregar torrents i accedir als fitxers .torrent, necessiteu els drets d\'accés complets als fitxers. Sense aquest permís, l\'ús del servei està restringit. Esteu segur que voleu denegar aquest permís?</string>
+    <string name="perm_denied_warning_android_r">Es requereixen permisos d\'accés als fitxers per descarregar torrents i accedir als fitxers .torrent. Sense aquest permís, l\'ús del servei està restringit. Esteu segur que voleu denegar aquest permís?</string>
 </resources>

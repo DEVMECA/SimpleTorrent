@@ -555,5 +555,5 @@
     <string name="btn_history_uncheck">Odznacz wszystko</string>
     <string name="btn_history_delete">Usuń</string>
 
-    <string name="perm_denied_warning_android_r"></string>
+    <string name="perm_denied_warning_android_r">Aby pobierać torrenty i uzyskiwać dostęp do plików .torrent, wymagane są uprawnienia dostępu do plików. Bez tego zezwolenia korzystanie z usługi jest ograniczone. Czy na pewno chcesz odmówić tego pozwolenia?</string>
 </resources>

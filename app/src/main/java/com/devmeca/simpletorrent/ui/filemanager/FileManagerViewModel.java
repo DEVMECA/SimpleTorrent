@@ -141,6 +141,7 @@ public class FileManagerViewModel extends AndroidViewModel
 
         } catch (Exception e) {
             /* Ignore */
+            e.printStackTrace();
         }
 
         return items;

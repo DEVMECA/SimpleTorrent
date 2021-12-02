@@ -631,6 +631,6 @@
     <string name="pref_feed_keep_items_time_entries_7">3 months</string>
     <string name="pref_feed_keep_items_time_entries_8">Indefinitely</string>
 
-    <string name="perm_denied_warning_android_r">All file access permissions are required to download torrents and access .torrent files. Without this permission, the use of the service is restricted. Are you sure you want to deny this permission\?</string>
+    <string name="perm_denied_warning_android_r">file access permissions are required to download torrents and access .torrent files. Without this permission, the use of the service is restricted. Are you sure you want to deny this permission?</string>
 
 </resources>

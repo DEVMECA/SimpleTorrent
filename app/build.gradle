@@ -6,12 +6,12 @@ android {
         applicationId "com.devmeca.simpletorrent"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 20
+        versionCode 22
         /*
          * Convection:
          *  major.minor.[revision][-some_info]
          */
-        versionName '1.5.0'
+        versionName '1.5.2'
         vectorDrawables.useSupportLibrary true
         multiDexEnabled true
 

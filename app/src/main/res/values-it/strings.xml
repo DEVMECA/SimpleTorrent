@@ -557,5 +557,5 @@
     <string name="btn_history_uncheck">Deseleziona tutto</string>
     <string name="btn_history_delete">Elimina</string>
 
-    <string name="perm_denied_warning_android_r">Per scaricare torrent e accedere ai file .torrent, sono necessari i diritti di accesso completi ai file. Senza questa autorizzazione, l\'uso del servizio è limitato. Sei sicuro di voler negare questa autorizzazione?</string>
+    <string name="perm_denied_warning_android_r">sono necessarie le autorizzazioni di accesso ai file per scaricare torrent e accedere ai file .torrent. Senza questa autorizzazione, l\'uso del servizio è limitato. Sei sicuro di voler negare questa autorizzazione?</string>
 </resources>

@@ -544,5 +544,5 @@
     <string name="btn_history_uncheck">Alles deaktivieren</string>
     <string name="btn_history_delete">Löschen</string>
 
-    <string name="perm_denied_warning_android_r">Um Torrents herunterzuladen und auf .torrent-Dateien zuzugreifen, benötigen Sie vollständige Dateizugriffsrechte. Ohne diese Erlaubnis ist die Nutzung des Dienstes eingeschränkt. Möchten Sie diese Berechtigung wirklich verweigern?</string>
+    <string name="perm_denied_warning_android_r">Dateizugriffsberechtigungen sind erforderlich, um Torrents herunterzuladen und auf .torrent-Dateien zuzugreifen. Ohne diese Erlaubnis ist die Nutzung des Dienstes eingeschränkt. Möchten Sie diese Berechtigung wirklich verweigern?</string>
 </resources>

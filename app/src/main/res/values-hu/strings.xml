@@ -556,5 +556,5 @@
     <string name="btn_history_uncheck">Törölje az összes jelölést</string>
     <string name="btn_history_delete">Törlés</string>
 
-    <string name="perm_denied_warning_android_r">A torrentek letöltéséhez és a .torrent fájlok eléréséhez teljes fájlhozzáférési jog szükséges. Ezen engedély nélkül a szolgáltatás használata korlátozott. Biztosan megtagadja ezt az engedélyt?</string>
+    <string name="perm_denied_warning_android_r">fájlhozzáférési engedélyek szükségesek a torrentek letöltéséhez és a .torrent fájlok eléréséhez. Ezen engedély nélkül a szolgáltatás használata korlátozott. Biztosan megtagadja ezt az engedélyt?</string>
 </resources>

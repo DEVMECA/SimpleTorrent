@@ -557,5 +557,5 @@
     <string name="btn_history_uncheck">Снять все отметки</string>
     <string name="btn_history_delete">Удалить</string>
 
-    <string name="perm_denied_warning_android_r"></string>
+    <string name="perm_denied_warning_android_r">разрешения на доступ к файлам необходимы для загрузки торрентов и доступа к файлам .torrent. Без этого разрешения использование сервиса ограничено. Вы уверены, что хотите отказать в этом разрешении?</string>
 </resources>
