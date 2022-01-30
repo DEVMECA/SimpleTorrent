@@ -549,4 +549,10 @@
     <string name="btn_history_delete">Excluir</string>
 
     <string name="perm_denied_warning_android_r">permissões de acesso de arquivo são necessárias para baixar torrents e acessar arquivos .torrent. Sem essa permissão, o uso do serviço é restrito. Tem certeza que deseja negar esta permissão?</string>
+
+    <string name="site_link_menu">Link do site</string>
+    <string name="delete_torrent_site_question">Excluir site de torrent selecionado?</string>
+    <string name="torrent_site_url">URL do site de torrent</string>
+    <string name="torrent_site_nm">Nome do site de torrent</string>
+
 </resources>

@@ -557,4 +557,10 @@
     <string name="btn_history_delete">Törlés</string>
 
     <string name="perm_denied_warning_android_r">fájlhozzáférési engedélyek szükségesek a torrentek letöltéséhez és a .torrent fájlok eléréséhez. Ezen engedély nélkül a szolgáltatás használata korlátozott. Biztosan megtagadja ezt az engedélyt?</string>
+
+    <string name="site_link_menu">Webhelylink</string>
+    <string name="delete_torrent_site_question">Törli a kiválasztott torrentoldalt?</string>
+    <string name="torrent_site_url">Torrent webhely URL-je</string>
+    <string name="torrent_site_nm">Torrent webhely neve</string>
+
 </resources>

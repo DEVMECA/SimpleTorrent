@@ -557,4 +557,10 @@
     <string name="btn_history_delete">Διαγραφή</string>
 
     <string name="perm_denied_warning_android_r">Απαιτούνται δικαιώματα πρόσβασης αρχείων για τη λήψη torrent και την πρόσβαση στα αρχεία .torrent. Χωρίς αυτήν την άδεια, η χρήση της υπηρεσίας είναι περιορισμένη. Είστε βέβαιοι ότι θέλετε να αρνηθείτε αυτήν την άδεια;</string>
+
+    <string name="site_link_menu">Σύνδεσμος ιστότοπου</string>
+    <string name="delete_torrent_site_question">Διαγραφή επιλεγμένου ιστότοπου torrent;</string>
+    <string name="torrent_site_url">URL ιστότοπου torrent</string>
+    <string name="torrent_site_nm">Όνομα ιστότοπου torrent</string>
+
 </resources>

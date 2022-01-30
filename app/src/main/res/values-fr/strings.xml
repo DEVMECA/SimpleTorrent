@@ -557,4 +557,10 @@
     <string name="btn_history_delete">Supprimer</string>
 
     <string name="perm_denied_warning_android_r">des autorisations d\'accès aux fichiers sont nécessaires pour télécharger des torrents et accéder aux fichiers .torrent. Sans cette autorisation, l\'utilisation du service est restreinte. Êtes-vous sûr de vouloir refuser cette autorisation ?</string>
+
+    <string name="site_link_menu">Lien du site</string>
+    <string name="delete_torrent_site_question">Supprimer le site torrent sélectionné ?</string>
+    <string name="torrent_site_url">URL du site torrent</string>
+    <string name="torrent_site_nm">Nom du site torrent</string>
+
 </resources>

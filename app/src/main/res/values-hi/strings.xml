@@ -508,4 +508,9 @@
     <string name="btn_history_delete">हटाएं</string>
 
     <string name="perm_denied_warning_android_r"></string>
+
+    <string name="site_link_menu">साइट लिंक</string>
+    <string name="delete_torrent_site_question">चयनित टोरेंट साइट हटाएं?</string>
+    <string name="torrent_site_url">टोरेंट साइट url</string>
+    <string name="torrent_site_nm">टोरेंट साइट का नाम</string>
 </resources>

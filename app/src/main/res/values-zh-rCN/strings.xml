@@ -557,4 +557,10 @@
     <string name="btn_history_delete">删除</string>
 
     <string name="perm_denied_warning_android_r">下载种子和访问 .torrent 文件需要文件访问权限。 未经此许可，该服务的使用将受到限制。 您确定要拒绝此权限吗？</string>
+
+    <string name="site_link_menu">网站链接</string>
+    <string name="delete_torrent_site_question">删除选择的种子站点？</string>
+    <string name="torrent_site_url">种子网站网址</string>
+    <string name="torrent_site_nm">Torrent 站点名称</string>
+
 </resources>

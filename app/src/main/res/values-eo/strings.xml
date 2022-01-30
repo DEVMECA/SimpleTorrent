@@ -190,4 +190,10 @@
     <string name="btn_history_delete">Forigi</string>
 
     <string name="perm_denied_warning_android_r">dosiero-alirpermesoj estas postulataj por elŝuti torentojn kaj aliri .torrent-dosierojn. Sen ĉi tiu permeso, la uzo de la servo estas limigita. Ĉu vi certas, ke vi volas nei ĉi tiun permeson?</string>
+
+    <string name="site_link_menu">Reteja Ligo</string>
+    <string name="delete_torrent_site_question">Ĉu forigi elektitan torentan retejon?</string>
+    <string name="torrent_site_url">Torenta retejo-url</string>
+    <string name="torrent_site_nm">Torenta retejo-nomo</string>
+
 </resources>

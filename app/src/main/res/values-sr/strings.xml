@@ -552,4 +552,10 @@
     <string name="btn_history_delete">Избриши</string>
 
     <string name="perm_denied_warning_android_r">Дозволе за приступ датотекама су потребне за преузимање торента и приступ .торрент датотекама. Без ове дозволе, коришћење услуге је ограничено. Да ли сте сигурни да желите да одбијете ову дозволу?</string>
+
+    <string name="site_link_menu">Веза до сајта</string>
+    <string name="delete_torrent_site_question">Избрисати изабрани торрент сајт?</string>
+    <string name="torrent_site_url">УРЛ торрент сајта</string>
+    <string name="torrent_site_nm">Назив торрент сајта</string>
+
 </resources>

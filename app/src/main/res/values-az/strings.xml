@@ -557,4 +557,10 @@
     <string name="btn_history_delete">Sil</string>
 
     <string name="perm_denied_warning_android_r">torrentləri yükləmək və .torrent fayllarına daxil olmaq üçün fayla giriş icazələri tələb olunur. Bu icazə olmadan xidmətdən istifadə məhdudlaşdırılır. Bu icazəni rədd etmək istədiyinizə əminsiniz?</string>
+
+    <string name="site_link_menu">Sayt Linki</string>
+    <string name="delete_torrent_site_question">Seçilmiş torrent saytı silinsin?</string>
+    <string name="torrent_site_url">Torrent saytının URL-i</string>
+    <string name="torrent_site_nm">Torrent saytının adı</string>
+
 </resources>

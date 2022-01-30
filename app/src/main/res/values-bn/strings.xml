@@ -448,4 +448,10 @@
     <string name="btn_history_delete">মুছুন</string>
 
     <string name="perm_denied_warning_android_r">টরেন্ট ডাউনলোড করতে এবং .torrent ফাইল অ্যাক্সেস করতে ফাইল অ্যাক্সেস অনুমতি প্রয়োজন। এই অনুমতি ছাড়া, পরিষেবা ব্যবহার সীমিত করা হয়. আপনি কি নিশ্চিত আপনি এই অনুমতি অস্বীকার করতে চান?</string>
+
+    <string name="site_link_menu">সাইট লিঙ্ক</string>
+    <string name="delete_torrent_site_question">নির্বাচিত টরেন্ট সাইট মুছবেন?</string>
+    <string name="torrent_site_url">টরেন্ট সাইট ইউআরএল</string>
+    <string name="torrent_site_nm">টরেন্ট সাইটের নাম</string>
+
 </resources>

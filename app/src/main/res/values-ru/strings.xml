@@ -558,4 +558,10 @@
     <string name="btn_history_delete">Удалить</string>
 
     <string name="perm_denied_warning_android_r">разрешения на доступ к файлам необходимы для загрузки торрентов и доступа к файлам .torrent. Без этого разрешения использование сервиса ограничено. Вы уверены, что хотите отказать в этом разрешении?</string>
+
+    <string name="site_link_menu">Ссылка на сайт</string>
+    <string name="delete_torrent_site_question">Удалить выбранный торрент-сайт?</string>
+    <string name="torrent_site_url">URL-адрес торрент-сайта</string>
+    <string name="torrent_site_nm">Название торрент-сайта</string>
+
 </resources>

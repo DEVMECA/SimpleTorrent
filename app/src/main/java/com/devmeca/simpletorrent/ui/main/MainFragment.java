@@ -28,7 +28,6 @@ import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.provider.Settings;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.ContextMenu;
@@ -67,15 +66,13 @@ import com.devmeca.simpletorrent.ui.createtorrent.CreateTorrentActivity;
 import com.devmeca.simpletorrent.ui.customviews.RecyclerViewDividerDecoration;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.leinardi.android.speeddial.SpeedDialActionItem;
-
-import java.util.Arrays;
-import java.util.List;
 
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
@@ -252,19 +249,19 @@ public class MainFragment extends Fragment
         MobileAds.initialize(getContext(), initializationStatus -> { });
         adView = activity.getWindow().findViewById(R.id.adView);
 
-        ///*
+        /*
         // 개발
         String android_id = Settings.Secure.getString(getContext().getContentResolver(), Settings.Secure.ANDROID_ID);
         String deviceId = com.devmeca.simpletorrent.common.Utils.md5(android_id).toUpperCase();
         List<String> testDeviceIds = Arrays.asList(deviceId);
         RequestConfiguration configuration = new RequestConfiguration.Builder().setTestDeviceIds(testDeviceIds).build();
         MobileAds.setRequestConfiguration(configuration);
-        //*/
+        */
 
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
 
-        /*
+        ///*
         InterstitialAd.load(getContext(),"ca-app-pub-8798239074717406/1663038405", adRequest, new InterstitialAdLoadCallback() {
             @Override
             public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
@@ -282,7 +279,7 @@ public class MainFragment extends Fragment
                 mInterstitialAd = null;
             }
         });
-        */
+        //*/
 
         //[=============광고 END=============]
     }

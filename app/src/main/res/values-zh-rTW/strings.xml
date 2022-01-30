@@ -549,4 +549,10 @@
     <string name="btn_history_delete">删除</string>
 
     <string name="perm_denied_warning_android_r">下載種子和訪問 .torrent 文件需要文件訪問權限。 未經此許可，該服務的使用將受到限制。 您確定要拒絕此權限嗎？</string>
+
+    <string name="site_link_menu">網站鏈接</string>
+    <string name="delete_torrent_site_question">刪除選擇的種子站點？</string>
+    <string name="torrent_site_url">種子網站網址</string>
+    <string name="torrent_site_nm">Torrent 站點名稱</string>
+
 </resources>

@@ -6,12 +6,12 @@ android {
         applicationId "com.devmeca.simpletorrent"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 22
+        versionCode 23
         /*
          * Convection:
          *  major.minor.[revision][-some_info]
          */
-        versionName '1.5.2'
+        versionName '1.6.0'
         vectorDrawables.useSupportLibrary true
         multiDexEnabled true
 
@@ -164,6 +164,15 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-ads:17.2.0'
     implementation platform('com.google.firebase:firebase-bom:27.1.0')
+
+    // Retrofit 라이브러리
+    implementation 'com.squareup.retrofit2:retrofit:2.6.4'
+    // Gson 변환기 라이브러리
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.4'
+    // Scalars 변환기 라이브러리
+    implementation 'com.squareup.retrofit2:converter-scalars:2.6.4'
+
+    implementation 'org.modelmapper:modelmapper:2.3.8'
 }
 apply plugin: 'com.google.gms.google-services'
 com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true

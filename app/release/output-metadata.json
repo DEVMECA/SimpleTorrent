@@ -10,45 +10,9 @@
     {
       "type": "UNIVERSAL",
       "filters": [],
-      "versionCode": 22,
-      "versionName": "1.5.2",
+      "versionCode": 23,
+      "versionName": "1.6.0",
       "outputFile": "app-universal-release.apk"
-    },
-    {
-      "type": "ONE_OF_MANY",
-      "filters": [
-        {
-          "filterType": "ABI",
-          "value": "armeabi-v7a"
-        }
-      ],
-      "versionCode": 1000022,
-      "versionName": "1.5.2",
-      "outputFile": "app-armeabi-v7a-release.apk"
-    },
-    {
-      "type": "ONE_OF_MANY",
-      "filters": [
-        {
-          "filterType": "ABI",
-          "value": "x86"
-        }
-      ],
-      "versionCode": 3000022,
-      "versionName": "1.5.2",
-      "outputFile": "app-x86-release.apk"
-    },
-    {
-      "type": "ONE_OF_MANY",
-      "filters": [
-        {
-          "filterType": "ABI",
-          "value": "arm64-v8a"
-        }
-      ],
-      "versionCode": 2000022,
-      "versionName": "1.5.2",
-      "outputFile": "app-arm64-v8a-release.apk"
     },
     {
       "type": "ONE_OF_MANY",
@@ -58,9 +22,45 @@
           "value": "x86_64"
         }
       ],
-      "versionCode": 4000022,
-      "versionName": "1.5.2",
+      "versionCode": 4000023,
+      "versionName": "1.6.0",
       "outputFile": "app-x86_64-release.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "arm64-v8a"
+        }
+      ],
+      "versionCode": 2000023,
+      "versionName": "1.6.0",
+      "outputFile": "app-arm64-v8a-release.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "x86"
+        }
+      ],
+      "versionCode": 3000023,
+      "versionName": "1.6.0",
+      "outputFile": "app-x86-release.apk"
+    },
+    {
+      "type": "ONE_OF_MANY",
+      "filters": [
+        {
+          "filterType": "ABI",
+          "value": "armeabi-v7a"
+        }
+      ],
+      "versionCode": 1000023,
+      "versionName": "1.6.0",
+      "outputFile": "app-armeabi-v7a-release.apk"
     }
   ]
 }

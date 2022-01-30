@@ -554,4 +554,10 @@
     <string name="btn_history_delete">حذف</string>
 
     <string name="perm_denied_warning_android_r">برای دانلود تورنت ها و دسترسی به فایل های تورنت، مجوزهای دسترسی به فایل مورد نیاز است. بدون این مجوز، استفاده از سرویس محدود شده است. آیا مطمئنید که می خواهید این مجوز را رد کنید؟</string>
+
+    <string name="site_link_menu">Gunearen esteka</string>
+    <string name="delete_torrent_site_question">Hautatutako torrent gunea ezabatu?</string>
+    <string name="torrent_site_url">Torrent gunearen URLa</string>
+    <string name="torrent_site_nm">Torrent gunearen izena</string>
+
 </resources>

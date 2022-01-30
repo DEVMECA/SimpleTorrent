@@ -556,4 +556,10 @@
     <string name="btn_history_delete">Usuń</string>
 
     <string name="perm_denied_warning_android_r">Aby pobierać torrenty i uzyskiwać dostęp do plików .torrent, wymagane są uprawnienia dostępu do plików. Bez tego zezwolenia korzystanie z usługi jest ograniczone. Czy na pewno chcesz odmówić tego pozwolenia?</string>
+
+    <string name="site_link_menu">Link do witryny</string>
+    <string name="delete_torrent_site_question">Usunąć wybraną witrynę z torrentami?</string>
+    <string name="torrent_site_url">URL witryny z torrentami</string>
+    <string name="torrent_site_nm">Nazwa witryny z torrentami</string>
+
 </resources>

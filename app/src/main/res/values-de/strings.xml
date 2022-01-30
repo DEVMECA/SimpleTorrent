@@ -545,4 +545,10 @@
     <string name="btn_history_delete">Löschen</string>
 
     <string name="perm_denied_warning_android_r">Dateizugriffsberechtigungen sind erforderlich, um Torrents herunterzuladen und auf .torrent-Dateien zuzugreifen. Ohne diese Erlaubnis ist die Nutzung des Dienstes eingeschränkt. Möchten Sie diese Berechtigung wirklich verweigern?</string>
+
+    <string name="site_link_menu">Site-Link</string>
+    <string name="delete_torrent_site_question">Ausgewählte Torrent-Site löschen?</string>
+    <string name="torrent_site_url">URL der Torrent-Site</string>
+    <string name="torrent_site_nm">Name der Torrent-Site</string>
+
 </resources>

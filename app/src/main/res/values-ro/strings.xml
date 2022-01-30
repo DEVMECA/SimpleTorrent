@@ -556,4 +556,10 @@
     <string name="btn_history_delete">Ștergeți</string>
 
     <string name="perm_denied_warning_android_r">Permisiunile de acces la fișiere sunt necesare pentru a descărca torrente și pentru a accesa fișierele .torrent. Fără această permisiune, utilizarea serviciului este restricționată. Sigur doriți să refuzați această permisiune?</string>
+
+    <string name="site_link_menu">Link la site</string>
+    <string name="delete_torrent_site_question">Ștergeți site-ul torrent selectat?</string>
+    <string name="torrent_site_url">Adresa URL a site-ului torrent</string>
+    <string name="torrent_site_nm">Numele site-ului torrent</string>
+
 </resources>

@@ -459,4 +459,10 @@
     <string name="btn_history_delete">حذف</string>
 
     <string name="perm_denied_warning_android_r">أذونات الوصول إلى الملفات مطلوبة لتنزيل التورنت والوصول إلى ملفات التورنت. بدون هذا الإذن ، يتم تقييد استخدام الخدمة. هل أنت متأكد أنك تريد رفض هذا الإذن؟</string>
+
+    <string name="site_link_menu"> رابط الموقع </string>
+    <string name="delete_torrent_site_question"> هل تريد حذف موقع التورنت المحدد؟ </string>
+    <string name="torrent_site_url"> عنوان URL لموقع Torrent </string>
+    <string name="torrent_site_nm"> اسم موقع Torrent </string>
+
 </resources>

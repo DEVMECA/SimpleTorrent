@@ -557,4 +557,10 @@
     <string name="btn_history_delete">நீக்கு</string>
 
     <string name="perm_denied_warning_android_r">டோரண்ட்களைப் பதிவிறக்குவதற்கும் .டோரண்ட் கோப்புகளை அணுகுவதற்கும் கோப்பு அணுகல் அனுமதிகள் தேவை. இந்த அனுமதி இல்லாமல், சேவையைப் பயன்படுத்துவது தடைசெய்யப்பட்டுள்ளது. இந்த அனுமதியை நிச்சயமாக மறுக்க விரும்புகிறீர்களா?</string>
+
+    <string name="site_link_menu">தள இணைப்பு</string>
+    <string name="delete_torrent_site_question">தேர்ந்தெடுக்கப்பட்ட டொரண்ட் தளத்தை நீக்கவா?</string>
+    <string name="torrent_site_url">Torrent site url</string>
+    <string name="torrent_site_nm">Torrent தளத்தின் பெயர்</string>
+
 </resources>

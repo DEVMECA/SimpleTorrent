@@ -23,6 +23,14 @@ public *;
 -keep class  org.json.simple.** {
 public *;
 }
+-dontwarn com.squareup.retrofit2.**
+-keep class  com.squareup.retrofit2.** {
+public *;
+}
+-dontwarn org.modelmapper.**
+-keep class  org.modelmapper.** {
+public *;
+}
 -dontwarn com.tjeannin.apprate.**
 -keep class  com.tjeannin.apprate.** {
 public *;

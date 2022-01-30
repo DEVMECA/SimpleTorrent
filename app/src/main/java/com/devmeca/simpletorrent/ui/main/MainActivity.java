@@ -60,6 +60,7 @@ import com.devmeca.simpletorrent.core.system.SystemFacadeHelper;
 import com.devmeca.simpletorrent.core.utils.Utils;
 import com.devmeca.simpletorrent.receiver.NotificationReceiver;
 import com.devmeca.simpletorrent.service.HistoryService;
+import com.devmeca.simpletorrent.service.SiteService;
 import com.devmeca.simpletorrent.ui.BaseAlertDialog;
 import com.devmeca.simpletorrent.ui.FragmentCallback;
 import com.devmeca.simpletorrent.ui.PermissionDeniedDialog;
@@ -81,6 +82,7 @@ import com.devmeca.simpletorrent.ui.main.drawer.NoTagsItem;
 import com.devmeca.simpletorrent.ui.main.drawer.TagItem;
 import com.devmeca.simpletorrent.ui.main.drawer.TagsAdapter;
 import com.devmeca.simpletorrent.ui.settings.SettingsActivity;
+import com.devmeca.simpletorrent.ui.site.SiteLinkActivity;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
@@ -185,8 +187,11 @@ public class MainActivity extends AppCompatActivity implements FragmentCallback 
 
         Constants.android_id = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
 
-        //HistoryService.getInstance(getApplication().getBaseContext()).dropTableSQL();
         HistoryService.getInstance(getApplication().getBaseContext()).initSQL();
+        //HistoryService.getInstance(getApplication().getBaseContext()).dropTableSQL();
+
+        SiteService.getInstance(getApplication().getBaseContext()).initSQL();
+        //SiteService.getInstance(getApplication().getBaseContext()).delAllTorrentSiteData();
     }
 
     private void initLayout() {
@@ -756,6 +761,8 @@ public class MainActivity extends AppCompatActivity implements FragmentCallback 
             showLog();
         } else if (itemId == R.id.history_menu) {
             startActivity(new Intent(this, HistoryActivity.class));
+        } else if (itemId == R.id.site_menu) {
+            startActivity(new Intent(this, SiteLinkActivity.class));
         }
 
         return true;

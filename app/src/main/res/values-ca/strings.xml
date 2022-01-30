@@ -401,4 +401,10 @@
     <string name="btn_history_delete">Suprimeix</string>
 
     <string name="perm_denied_warning_android_r">Es requereixen permisos d\'accés als fitxers per descarregar torrents i accedir als fitxers .torrent. Sense aquest permís, l\'ús del servei està restringit. Esteu segur que voleu denegar aquest permís?</string>
+
+    <string name="site_link_menu">Enllaç al lloc</string>
+    <string name="delete_torrent_site_question">Vols suprimir el lloc de torrent seleccionat?</string>
+    <string name="torrent_site_url">URL del lloc de torrent</string>
+    <string name="torrent_site_nm">Nom del lloc de torrent</string>
+
 </resources>

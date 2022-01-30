@@ -543,4 +543,10 @@
     <string name="btn_history_delete">Verwijderen</string>
 
     <string name="perm_denied_warning_android_r">bestandstoegangsrechten zijn vereist om torrents te downloaden en toegang te krijgen tot .torrent-bestanden. Zonder deze toestemming is het gebruik van de dienst beperkt. Weet u zeker dat u deze toestemming wilt weigeren?</string>
+
+    <string name="site_link_menu">Sitelink</string>
+    <string name="delete_torrent_site_question">Geselecteerde torrent-site verwijderen?</string>
+    <string name="torrent_site_url">Torrent-site-url</string>
+    <string name="torrent_site_nm">Torrent-sitenaam</string>
+
 </resources>

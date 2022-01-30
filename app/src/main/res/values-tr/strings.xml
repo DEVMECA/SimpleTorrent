@@ -558,4 +558,10 @@
     <string name="btn_history_delete">Sil</string>
 
     <string name="perm_denied_warning_android_r">torrentleri indirmek ve .torrent dosyalarına erişmek için dosya erişim izinleri gerekir. Bu izin olmadan hizmetin kullanımı kısıtlanır. Bu izni reddetmek istediğinizden emin misiniz?</string>
+
+    <string name="site_link_menu">Site Bağlantısı</string>
+    <string name="delete_torrent_site_question">Seçilen torrent sitesi silinsin mi?</string>
+    <string name="torrent_site_url">Torrent sitesi url´si</string>
+    <string name="torrent_site_nm">Torrent site adı</string>
+
 </resources>

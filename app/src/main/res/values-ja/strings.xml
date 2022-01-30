@@ -557,4 +557,10 @@
     <string name="btn_history_delete">削除</string>
 
     <string name="perm_denied_warning_android_r">トレントをダウンロードして.torrentファイルにアクセスするには、ファイルアクセス許可が必要です。 この許可がない場合、サービスの使用は制限されます。 この許可を拒否してもよろしいですか？</string>
+
+    <string name="site_link_menu">サイトリンク</string>
+    <string name="delete_torrent_site_question">選択したトレントサイトを削除しますか？</string>
+    <string name="torrent_site_url">トレントサイトのURL</string>
+    <string name="torrent_site_nm">トレントサイト名</string>
+
 </resources>

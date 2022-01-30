@@ -360,4 +360,10 @@
     <string name="btn_history_delete">Delete</string>
 
     <string name="perm_denied_warning_android_r">file access permissions are required to download torrents and access .torrent files. Without this permission, the use of the service is restricted. Are you sure you want to deny this permission?</string>
+
+    <string name="site_link_menu">Site Link</string>
+    <string name="delete_torrent_site_question">Delete selected torrent site?</string>
+    <string name="torrent_site_url">Torrent site url</string>
+    <string name="torrent_site_nm">Torrent site name</string>
+
 </resources>

@@ -267,6 +267,11 @@
             android:name=".ui.history.HistoryActivity"
             android:theme="@style/AppTheme.Translucent" />
 
+        <activity
+            android:label="@string/app_name"
+            android:name=".ui.site.SiteLinkActivity"
+            android:theme="@style/AppTheme.Translucent" />
+
         <service
             android:name=".service.TorrentService" />
 
@@ -306,5 +311,8 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-8798239074717406~4723611741"/>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 </manifest>

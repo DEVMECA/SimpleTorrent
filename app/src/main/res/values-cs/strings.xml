@@ -556,4 +556,10 @@
     <string name="btn_history_delete">Smazat</string>
 
     <string name="perm_denied_warning_android_r">Ke stahování torrentů a přístupu k souborům .torrent jsou vyžadována oprávnění pro přístup k souborům. Bez tohoto povolení je používání služby omezeno. Opravdu chcete toto oprávnění odepřít?</string>
+
+    <string name="site_link_menu">Odkaz na web</string>
+    <string name="delete_torrent_site_question">Smazat vybranou torrentovou stránku?</string>
+    <string name="torrent_site_url">Adresa URL webu torrentu</string>
+    <string name="torrent_site_nm">Název webu torrentu</string>
+
 </resources>
