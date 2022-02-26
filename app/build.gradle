@@ -6,12 +6,12 @@ android {
         applicationId "com.devmeca.simpletorrent"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 23
+        versionCode 24
         /*
          * Convection:
          *  major.minor.[revision][-some_info]
          */
-        versionName '1.6.0'
+        versionName '1.6.1'
         vectorDrawables.useSupportLibrary true
         multiDexEnabled true
 
@@ -135,7 +135,7 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:2.2.19"
     implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
 
-    def LIBTORRENT4J_VERSION = '2.0.4-22-RC1'
+    def LIBTORRENT4J_VERSION = '2.0.5-25'
     implementation "org.libtorrent4j:libtorrent4j:$LIBTORRENT4J_VERSION"
     implementation "org.libtorrent4j:libtorrent4j-android-arm:$LIBTORRENT4J_VERSION"
     implementation "org.libtorrent4j:libtorrent4j-android-arm64:$LIBTORRENT4J_VERSION"
