@@ -2,16 +2,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/search"
-        app:showAsAction="ifRoom"
+    <item
+        android:id="@+id/share_app"
+        android:icon="@drawable/ic_baseline_mobile_screen_share_24"
+        android:title="@string/share_tracker_url"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/search"
         android:icon="@drawable/ic_search_white_24dp"
         android:title="@string/search"
-        app:actionViewClass="androidx.appcompat.widget.SearchView"/>
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="always" />
 
-    <item android:id="@+id/feed_menu"
-        app:showAsAction="ifRoom"
+    <item
+        android:id="@+id/feed_menu"
         android:icon="@drawable/ic_rss_feed_white_24dp"
-        android:title="@string/feed" />
+        android:title="@string/feed"
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/pause_all_menu"

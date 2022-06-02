@@ -22,6 +22,7 @@ package com.devmeca.simpletorrent.ui.main;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -702,6 +703,7 @@ public class MainFragment extends Fragment
                 .subscribe((ids) -> viewModel.forceAnnounceTorrents(ids)));
     }
 
+    @SuppressLint("WrongConstant")
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
     {
@@ -712,6 +714,14 @@ public class MainFragment extends Fragment
             openFileErrorDialog();
             return;
         }
+
+        int takeFlags = data.getFlags() & (Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+        ContentResolver resolver = getContext().getContentResolver();
+        if(data.getData() == null){
+            return;
+        }
+
+        resolver.takePersistableUriPermission(data.getData(),takeFlags);
 
         Intent i = new Intent(activity, AddTorrentActivity.class);
         i.putExtra(AddTorrentActivity.TAG_URI, data.getData());

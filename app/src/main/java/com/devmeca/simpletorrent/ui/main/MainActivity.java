@@ -763,9 +763,20 @@ public class MainActivity extends AppCompatActivity implements FragmentCallback 
             startActivity(new Intent(this, HistoryActivity.class));
         } else if (itemId == R.id.site_menu) {
             startActivity(new Intent(this, SiteLinkActivity.class));
+        } else if (itemId == R.id.share_app){
+            shareApp();
         }
 
         return true;
+    }
+
+    private void shareApp() {
+        Intent intent =new Intent();
+        intent.setAction(Intent.ACTION_SEND);
+        intent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.app_name));
+        intent.putExtra(Intent.EXTRA_TEXT,"https://play.google.com/store/apps/details?id=" + getPackageName());
+        intent.setType("text/plain");
+        startActivity(intent);
     }
 
     private void showAboutDialog() {

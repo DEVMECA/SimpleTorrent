@@ -453,8 +453,6 @@ public class DetailTorrentFragment extends Fragment
             viewModel.forceRecheckTorrent();
         } else if (itemId == R.id.force_announce_torrent_menu) {
             viewModel.forceAnnounceTorrent();
-        } else if (itemId == R.id.share_magnet_menu) {
-            shareMagnetDialog();
         } else if (itemId == R.id.save_torrent_file_menu) {
             torrentSaveChooseDialog();
         } else if (itemId == R.id.add_trackers_menu) {
@@ -463,9 +461,15 @@ public class DetailTorrentFragment extends Fragment
             speedLimitDialog();
         } else if (itemId == R.id.run_file_torrent_menu){
             runFileTorrent();
+        } else if (itemId == R.id.share_torrent_menu){
+            shareTorrent();
         }
 
         return true;
+    }
+
+    private void shareTorrent() {
+        shareMagnetDialog();
     }
 
     private void runFileTorrent() {
